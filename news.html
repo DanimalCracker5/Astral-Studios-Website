@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>News — Astral Studios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.news-list{display:flex;flex-direction:column;gap:16px;margin-top:4px}
+.news-item{
+  background:var(--s1);border:1px solid var(--line);border-radius:var(--r);
+  padding:26px 28px;position:relative;overflow:hidden;
+  transition:border-color .2s;
+}
+.news-item:hover{border-color:var(--line2)}
+.news-item::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--ni,var(--blue));opacity:.5;
+}
+.news-item.green{--ni:var(--green)}
+.news-item.blue{--ni:var(--blue)}
+.news-item.amber{--ni:var(--amber)}
+.news-item.red{--ni:var(--red)}
+.news-meta{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:12px;flex-wrap:wrap;
+}
+.news-tag{
+  font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.1em;
+  text-transform:uppercase;padding:3px 10px;border-radius:100px;
+  border:1px solid;
+}
+.tag-green{color:var(--green);border-color:rgba(62,207,142,.25);background:rgba(62,207,142,.07)}
+.tag-amber{color:var(--amber);border-color:rgba(56,189,248,.25);background:rgba(56,189,248,.07)}
+.tag-red{color:var(--red);border-color:rgba(240,80,80,.25);background:rgba(240,80,80,.07)}
+.news-date{
+  font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.08em;
+  color:var(--dim);
+}
+.news-title{
+  font-size:1rem;font-weight:600;color:var(--text);
+  margin-bottom:10px;letter-spacing:-.01em;
+}
+.news-body{font-size:.85rem;color:var(--sub);line-height:1.82}
+.news-body p+p{margin-top:8px}
+.news-sig{margin-top:10px;font-size:.82rem;color:var(--dim);font-style:italic}
+.news-links{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+.news-link{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'DM Mono',monospace;font-size:.63rem;letter-spacing:.08em;
+  padding:7px 14px;border-radius:var(--r-sm);text-decoration:none;
+  transition:opacity .15s,transform .12s;
+}
+.news-link:hover{opacity:.85;transform:translateY(-1px)}
+.news-link.primary{background:var(--blue);color:#000}
+.news-link.ghost{background:transparent;color:var(--sub);border:1px solid var(--line2)}
+.news-link.ghost:hover{color:var(--text);border-color:var(--dim)}
+</style>
+</head>
+<body data-page="news">
+
+<script src="nav.js"></script>
+
+<div class="page-content">
+
+  <div class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-badge"><span class="hero-badge-dot"></span>Development Updates</div>
+    <h1 class="page-title">NEWS</h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">Updates from Astral Studios — patches, releases, and dev notes.</p>
+  </div>
+
+  <div class="wrap">
+    <div class="block">
+      <div class="sec-lbl">Latest Updates</div>
+      <div class="news-list">
+
+        <!-- Dec 2025 -->
+        <div class="news-item green">
+          <div class="news-meta">
+            <span class="news-tag tag-green">✅ Milestone</span>
+            <span class="news-date">December 2025</span>
+          </div>
+          <div class="news-title">Entered Meta Horizon Start Competition</div>
+          <div class="news-body">
+            <p>Astral has been submitted to the Meta Horizon Start Competition. Check out the full submission on Devpost for details on the build and vision behind the VR edition.</p>
+          </div>
+          <div class="news-links">
+            <a class="news-link primary" href="#" target="_blank" rel="noopener">View Devpost Submission →</a>
+          </div>
+        </div>
+
+        <!-- Nov 2025 -->
+        <div class="news-item blue">
+          <div class="news-meta">
+            <span class="news-tag tag-green">✨ Release</span>
+            <span class="news-date">November 22, 2025</span>
+          </div>
+          <div class="news-title">VR Edition Released</div>
+          <div class="news-body">
+            <p>ASTRAL VR Edition is now live on the Meta Horizon Store. The full open world sandbox experience is now playable in virtual reality on Meta Quest.</p>
+          </div>
+          <div class="news-links">
+            <a class="news-link primary" href="https://www.meta.com/experiences/astral-vr-edition/24935973916024636/" target="_blank" rel="noopener">Download on Meta Quest →</a>
+          </div>
+        </div>
+
+        <!-- Sep 2025 fix -->
+        <div class="news-item green">
+          <div class="news-meta">
+            <span class="news-tag tag-green">✅ Patch</span>
+            <span class="news-date">September 2025</span>
+          </div>
+          <div class="news-title">iOS Crash Fixed</div>
+          <div class="news-body">
+            <p>The crash on iPhone that made Astral unplayable is now resolved. The game should load normally again on iOS. Thanks for your patience and support while I tracked this down — I'll keep monitoring stability moving forward.</p>
+          </div>
+          <div class="news-sig">— Daniel</div>
+          <div class="news-links">
+            <a class="news-link ghost" href="#" target="_blank" rel="noopener">Download on the App Store</a>
+          </div>
+        </div>
+
+        <!-- Sep 2025 notice -->
+        <div class="news-item red">
+          <div class="news-meta">
+            <span class="news-tag tag-red">⚠️ Notice</span>
+            <span class="news-date">September 2025</span>
+          </div>
+          <div class="news-title">iOS Crash Notice</div>
+          <div class="news-body">
+            <p>I would like to apologize to everyone on iPhone — the game currently crashes when loading, essentially making it unplayable on iOS. As a solo developer I can't fix this right away, but I'm working on finding the cause and hope to have a solution soon.</p>
+          </div>
+        </div>
+
+        <!-- Sep 2025 steam -->
+        <div class="news-item amber">
+          <div class="news-meta">
+            <span class="news-tag tag-amber">🚀 Release</span>
+            <span class="news-date">September 2025</span>
+          </div>
+          <div class="news-title">Game Released on Steam</div>
+          <div class="news-body">
+            <p>Astral is now available on Steam for Windows. The Steam edition brings the full open world sandbox experience to desktop.</p>
+          </div>
+          <div class="news-links">
+            <a class="news-link primary" href="https://store.steampowered.com/app/3910490/Astral__Steam_Edition" target="_blank" rel="noopener">View on Steam →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <span class="foot-l">© Astral Studios</span>
+  <div class="foot-links">
+    <a href="https://sites.google.com/view/astral-studios/more/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+    <a href="https://sites.google.com/view/astral-studios/more/report-a-bug" target="_blank" rel="noopener">Report a Bug</a>
+    <a href="https://sites.google.com/view/astral-studios/more/contact-us" target="_blank" rel="noopener">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
