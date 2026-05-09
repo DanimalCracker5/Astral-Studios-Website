@@ -43,31 +43,42 @@
     </div>
 
     <div class="block">
-      <div class="sec-lbl">Game Modes</div>
-      <div class="modes">
-        <div class="mode" style="--mc:var(--blue)">
-          <div class="mode-bar"></div>
-          <span class="mode-icon">🌍</span>
-          <div class="mode-name">Sandbox</div>
-          <div class="mode-desc">Open-world free play with an in-game economy and currency system.</div>
-        </div>
-        <div class="mode" style="--mc:var(--purple)">
-          <div class="mode-bar"></div>
-          <span class="mode-icon">🧱</span>
-          <div class="mode-name">Free Build</div>
-          <div class="mode-desc">Unlimited access to all placeable items with no restrictions.</div>
-        </div>
-        <div class="mode" style="--mc:var(--green)">
-          <div class="mode-bar"></div>
-          <span class="mode-icon">🚗</span>
-          <div class="mode-name">Drive</div>
-          <div class="mode-desc">Open world vehicle driving. Purchase vehicles from the in-game shop with earned currency.</div>
-        </div>
-        <div class="mode" style="--mc:var(--red)">
-          <div class="mode-bar"></div>
-          <span class="mode-icon">⚔️</span>
-          <div class="mode-name">Arenas</div>
-          <div class="mode-desc">Wave-based enemy combat. Survive as long as you can — when you die, the run ends.</div>
+      <button onclick="
+        var c=document.getElementById('modes-content');
+        var a=document.getElementById('modes-arrow');
+        var open=c.style.display!=='none';
+        c.style.display=open?'none':'block';
+        a.style.transform=open?'rotate(0deg)':'rotate(180deg)';
+      " style="width:100%;background:none;border:none;cursor:pointer;padding:0;display:flex;align-items:center;gap:12px;">
+        <div class="sec-lbl" style="flex:1;margin-bottom:0;">Game Modes</div>
+        <svg id="modes-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;transition:transform .25s;transform:rotate(0deg)"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div id="modes-content" style="display:none;margin-top:20px;">
+        <div class="modes">
+          <div class="mode" style="--mc:var(--blue)">
+            <div class="mode-bar"></div>
+            <span class="mode-icon">🌍</span>
+            <div class="mode-name">Sandbox</div>
+            <div class="mode-desc">Open-world free play with an in-game economy and currency system.</div>
+          </div>
+          <div class="mode" style="--mc:var(--purple)">
+            <div class="mode-bar"></div>
+            <span class="mode-icon">🧱</span>
+            <div class="mode-name">Free Build</div>
+            <div class="mode-desc">Unlimited access to all placeable items with no restrictions.</div>
+          </div>
+          <div class="mode" style="--mc:var(--green)">
+            <div class="mode-bar"></div>
+            <span class="mode-icon">🚗</span>
+            <div class="mode-name">Drive</div>
+            <div class="mode-desc">Open world vehicle driving. Purchase vehicles from the in-game shop with earned currency.</div>
+          </div>
+          <div class="mode" style="--mc:var(--red)">
+            <div class="mode-bar"></div>
+            <span class="mode-icon">⚔️</span>
+            <div class="mode-name">Arenas</div>
+            <div class="mode-desc">Wave-based enemy combat. Survive as long as you can — when you die, the run ends.</div>
+          </div>
         </div>
       </div>
     </div>
