@@ -25,7 +25,7 @@
       established to publish games and projects by Daniel Gentry.
     </p>
     <div class="btn-row">
-      <a class="btn btn-primary" href="astral.html">Download Astral</a>
+      <a class="btn btn-primary" href="astral.html#download">Download Astral</a>
       <a class="btn btn-ghost" href="services.html">Our Services</a>
     </div>
   </div>
@@ -34,18 +34,21 @@
 
     <div class="block">
       <div class="sec-lbl">About</div>
-      <p class="prose">Astral Studios LLC is an independent game studio and creative services provider run by Daniel Gentry.</p>
-      <p class="prose">The studio is focused on building Astral — a cross-platform open world sandbox game — while also offering freelance services in game development, software & application development, and web development.</p>
+      <p class="prose" style="text-align:center;">Astral Studios LLC is an independent game studio and creative services provider run by Daniel Gentry.</p>
+      <p class="prose" style="text-align:center;">The studio is focused on building Astral — a cross-platform open world sandbox game — while also offering freelance services in game development, software & application development, and web development.</p>
     </div>
 
     <div class="block">
       <div class="sec-lbl">Games</div>
       <div style="display:flex;justify-content:center;">
-        <div style="width:100%;background:var(--s1);border:1px solid var(--line);border-top:2px solid var(--blue);border-radius:var(--r);padding:36px 28px;text-align:center;display:flex;flex-direction:column;align-items:center;">
-          <img src="assets/astral.png" alt="Astral" style="width:80px;height:80px;object-fit:cover;border-radius:16px;margin:0 auto 18px;"/>
+        <div onclick="location.href='astral.html'" style="width:100%;background:var(--s1);border:1px solid var(--line);border-top:2px solid var(--blue);border-radius:var(--r);padding:36px 28px;text-align:center;display:flex;flex-direction:column;align-items:center;cursor:pointer;transition:border-color .2s,transform .18s;" onmouseover="this.style.borderColor='var(--line2)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--line)';this.style.transform='translateY(0)'">
+          <img src="assets/astral.png" alt="Astral" style="width:110px;height:110px;object-fit:cover;border-radius:20px;margin:0 auto 20px;box-shadow:0 8px 32px rgba(0,0,0,.5);"/>
           <div style="font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:10px;">Astral</div>
-          <div style="font-size:.85rem;color:var(--sub);line-height:1.65;max-width:480px;margin-bottom:20px;">Open world sandbox with vehicles, characters, and an astral projection ability. Available on Android, Steam, and Meta Quest.</div>
-          <a href="astral.html" style="padding:9px 24px;border-radius:var(--r-sm);background:transparent;border:1px solid rgba(34,211,238,.4);font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--blue);text-decoration:none;">More Info</a>
+          <div style="font-size:.85rem;color:var(--sub);line-height:1.65;max-width:480px;margin-bottom:22px;">Open world sandbox with vehicles, characters, and an astral projection ability. Available on Android, Steam, and Meta Quest.</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;" onclick="event.stopPropagation()">
+            <a href="astral.html#download" style="padding:9px 22px;border-radius:var(--r-sm);background:transparent;border:1px solid var(--line2);font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--sub);text-decoration:none;">More Info</a>
+            <a href="astral.html#download" style="padding:9px 22px;border-radius:var(--r-sm);background:transparent;border:1px solid rgba(34,211,238,.4);font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--blue);text-decoration:none;">Download</a>
+          </div>
         </div>
       </div>
     </div>
@@ -57,10 +60,10 @@
         <div style="flex:1;min-width:240px;max-width:380px;background:var(--s1);border:1px solid var(--line);border-top:2px solid var(--purple);border-radius:var(--r);padding:24px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;">
           <span style="font-size:1.6rem;margin-bottom:14px;display:block;">🎮</span>
           <div style="font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:7px;">Game Development</div>
-          <div style="font-size:.8rem;color:var(--sub);line-height:1.65;flex:1;">Custom games, interactive experiences, and game systems for multiple platforms.</div>
+          <div style="font-size:.8rem;color:var(--sub);line-height:1.65;flex:1;">Unity games built for Android, IOS, desktop, and Meta Quest. Multiplayer, UI, and more.</div>
           <div style="display:flex;gap:8px;margin-top:18px;flex-wrap:wrap;width:100%;">
             <a href="services-game.html" style="flex:1;text-align:center;padding:9px 14px;border-radius:var(--r-sm);background:transparent;border:1px solid var(--line2);font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--sub);text-decoration:none;">Learn More</a>
-            <a href="https://tidycal.com/astralstudios/consultation" target="_blank" rel="noopener" style="flex:1;text-align:center;padding:9px 14px;border-radius:var(--r-sm);background:transparent;border:1px solid rgba(34,211,238,.4);font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--blue);text-decoration:none;white-space:nowrap;">Schedule a Call</a>
+            <a href="https://tidycal.com/astralstudios/schedule" target="_blank" rel="noopener" style="flex:1;text-align:center;padding:9px 14px;border-radius:var(--r-sm);background:transparent;border:1px solid rgba(34,211,238,.4);font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--blue);text-decoration:none;white-space:nowrap;">Schedule a Call</a>
           </div>
         </div>
 
@@ -70,7 +73,7 @@
           <div style="font-size:.8rem;color:var(--sub);line-height:1.65;flex:1;">Fast, responsive websites and web apps built to your exact spec.</div>
           <div style="display:flex;gap:8px;margin-top:18px;flex-wrap:wrap;width:100%;">
             <a href="services-web.html" style="flex:1;text-align:center;padding:9px 14px;border-radius:var(--r-sm);background:transparent;border:1px solid var(--line2);font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--sub);text-decoration:none;">Learn More</a>
-            <a href="https://tidycal.com/astralstudios/consultation" target="_blank" rel="noopener" style="flex:1;text-align:center;padding:9px 14px;border-radius:var(--r-sm);background:transparent;border:1px solid rgba(34,211,238,.4);font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--blue);text-decoration:none;white-space:nowrap;">Schedule a Call</a>
+            <a href="https://tidycal.com/astralstudios/schedule" target="_blank" rel="noopener" style="flex:1;text-align:center;padding:9px 14px;border-radius:var(--r-sm);background:transparent;border:1px solid rgba(34,211,238,.4);font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--blue);text-decoration:none;white-space:nowrap;">Schedule a Call</a>
           </div>
         </div>
 
