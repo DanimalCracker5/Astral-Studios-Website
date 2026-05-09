@@ -56,7 +56,7 @@ nav{
   box-shadow:0 0 8px rgba(34,211,238,.7);
 }
 .nav-center{
-  display:flex;gap:2px;
+  display:flex;gap:2px;align-items:center;
   position:absolute;left:50%;transform:translateX(-50%);
 }
 .nav-center a,.nav-dd button{
@@ -69,21 +69,48 @@ nav{
 }
 .nav-center a:hover,.nav-dd button:hover{color:var(--text);background:var(--s2)}
 .nav-center a.active{color:var(--text)}
+
+/* Dropdown — hover gap fix */
 .nav-dd{position:relative}
+/* invisible bridge covers the 8px gap so hover doesn't break mid-air */
+.nav-dd::after{
+  content:'';
+  position:absolute;
+  top:100%;left:-12px;right:-12px;
+  height:12px;
+  background:transparent;
+}
 .nav-dd-menu{
   display:none;
   position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);
   background:var(--s2);border:1px solid var(--line2);border-radius:var(--r);
-  min-width:180px;padding:6px;z-index:300;
+  min-width:200px;padding:6px;z-index:300;
   box-shadow:0 20px 40px rgba(0,0,0,.65);
 }
 .nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu{display:block}
 .nav-dd-menu a{
   display:block;padding:8px 12px;font-size:.78rem;
   color:var(--sub);text-decoration:none;border-radius:var(--r-sm);
-  transition:color .14s,background .14s;
+  transition:color .14s,background .14s;white-space:nowrap;
 }
 .nav-dd-menu a:hover{color:var(--text);background:var(--s3)}
+
+/* Schedule Consultation CTA in nav */
+.nav-cta{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:6px 14px;
+  background:rgba(34,211,238,.1);
+  border:1px solid rgba(34,211,238,.25);
+  border-radius:var(--r-sm);
+  font-family:'DM Mono',monospace;
+  font-size:.64rem;letter-spacing:.08em;font-weight:500;
+  color:var(--blue);text-decoration:none;
+  white-space:nowrap;
+  transition:background .15s,border-color .15s,color .15s;
+}
+.nav-cta:hover{background:rgba(34,211,238,.18);border-color:rgba(34,211,238,.45);color:var(--blue) !important}
+.nav-cta-dot{width:5px;height:5px;border-radius:50%;background:var(--blue);box-shadow:0 0 5px var(--blue);flex-shrink:0}
+
 .ham{
   display:none;flex-direction:column;gap:5px;
   background:none;border:none;cursor:pointer;padding:5px;
@@ -99,6 +126,11 @@ nav{
 .mob-menu a{font-size:.88rem;color:var(--sub);text-decoration:none;padding:9px 8px;border-radius:var(--r-sm);transition:color .14s}
 .mob-menu a:hover{color:var(--text)}
 .mob-lbl{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.12em;color:var(--dim);text-transform:uppercase;padding:12px 8px 3px}
+.mob-menu .mob-cta{
+  margin-top:6px;padding:11px 14px;
+  background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);
+  border-radius:var(--r-sm);color:var(--blue);font-size:.82rem;font-weight:500;
+}
 
 /* HERO */
 .hero{
@@ -251,6 +283,17 @@ footer{border-top:1px solid var(--line);padding:18px 28px;display:flex;align-ite
 .btn-ghost{background:transparent;color:var(--sub);border:1px solid var(--line2)}
 .btn-ghost:hover{color:var(--text);border-color:var(--dim)}
 
+/* SCHEDULE / TIDYCAL EMBED */
+.cal-wrap{max-width:900px;margin:0 auto;padding:0 20px 80px}
+.cal-embed{
+  width:100%;
+  border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;background:var(--s1);
+}
+.cal-embed iframe{
+  width:100%;height:700px;border:none;display:block;
+}
+
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 .page-content>*{animation:fadeUp .38s ease both}
 
@@ -267,6 +310,7 @@ footer{border-top:1px solid var(--line);padding:18px 28px;display:flex;align-ite
   .cta{flex-direction:column;align-items:flex-start}
   footer{flex-direction:column;align-items:center;text-align:center}
   .feature-grid{grid-template-columns:1fr}
+  .cal-embed iframe{height:560px}
 }
 @media(max-width:440px){
   .modes{grid-template-columns:1fr}
