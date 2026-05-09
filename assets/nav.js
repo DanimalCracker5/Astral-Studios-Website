@@ -20,8 +20,8 @@
       <button>Services ↓</button>
       <div class="nav-dd-menu">
         <a href="services.html" data-nav="services">Explore Our Services</a>
-        <a href="services-game.html" data-nav="services-game">Game Development</a>
-        <a href="services-web.html" data-nav="services-web">Web Development</a>
+        <a href="GameDevelopment.html" data-nav="services-game">Game Development</a>
+        <a href="WebDevelopment.html" data-nav="services-web">Web Development</a>
       </div>
     </div>
     <div class="nav-dd">
@@ -46,8 +46,8 @@
   <a href="astral.html" data-nav="astral" style="padding-left:20px">Astral</a>
   <div class="mob-lbl">Services</div>
   <a href="services.html" data-nav="services" style="padding-left:20px">Explore Our Services</a>
-  <a href="services-game.html" data-nav="services-game" style="padding-left:20px">Game Development</a>
-  <a href="services-web.html" data-nav="services-web" style="padding-left:20px">Web Development</a>
+  <a href="GameDevelopment.html" data-nav="services-game" style="padding-left:20px">Game Development</a>
+  <a href="WebDevelopment.html" data-nav="services-web" style="padding-left:20px">Web Development</a>
   <div class="mob-lbl">More</div>
   <a href="report-bug.html" data-nav="report-bug" style="padding-left:20px">Report A Bug</a>
   <a href="privacy.html" data-nav="privacy" style="padding-left:20px">Privacy Policy</a>
