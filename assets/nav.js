@@ -14,6 +14,7 @@
       <button>Games ↓</button>
       <div class="nav-dd-menu">
         <a href="astral.html" data-nav="astral">Astral</a>
+        <a href="drunken-decks.html" data-nav="drunken-decks">Drunken Decks</a>
       </div>
     </div>
     <div class="nav-dd">
@@ -44,6 +45,7 @@
   <a href="index.html" data-nav="home">Home</a>
   <div class="mob-lbl">Games</div>
   <a href="astral.html" data-nav="astral" style="padding-left:20px">Astral</a>
+  <a href="drunken-decks.html" data-nav="drunken-decks" style="padding-left:20px">Drunken Decks</a>
   <div class="mob-lbl">Services</div>
   <a href="services.html" data-nav="services" style="padding-left:20px">Explore Our Services</a>
   <a href="GameDevelopment.html" data-nav="services-game" style="padding-left:20px">Game Development</a>
