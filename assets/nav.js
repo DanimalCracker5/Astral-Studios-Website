@@ -1,6 +1,6 @@
-// nav.js — shared navigation for all Astral Studios pages
+// Shared navigation for all Astral Studios pages.
 // Include in every page with: <script src="assets/nav.js"></script>
-// Set the active nav item by adding data-page="pagename" to your <body> tag
+// Set the active nav item by adding data-page="pagename" to your <body> tag.
 
 (function () {
   const NAV_HTML = `
@@ -8,54 +8,68 @@
   <a class="nav-logo" href="index.html">
     <img src="assets/logo.png" alt="Astral Studios" style="height:34px;width:auto;display:block;">
   </a>
-  <div class="nav-center">
-    <a href="index.html" data-nav="home">Home</a>
-    <div class="nav-dd">
-      <button>Games ↓</button>
-      <div class="nav-dd-menu">
-        <a href="astral.html" data-nav="astral">Astral</a>
-        <a href="drunken-decks.html" data-nav="drunken-decks">Drunken Decks</a>
-      </div>
-    </div>
-    <div class="nav-dd">
-      <button>Services ↓</button>
-      <div class="nav-dd-menu">
-        <a href="services.html" data-nav="services">Explore Our Services</a>
-        <a href="GameDevelopment.html" data-nav="services-game">Game Development</a>
-        <a href="WebDevelopment.html" data-nav="services-web">Web Development</a>
-      </div>
-    </div>
-    <div class="nav-dd">
-      <button>More ↓</button>
-      <div class="nav-dd-menu">
-        <a href="report-bug.html" data-nav="report-bug">Report A Bug</a>
-        <a href="privacy.html" data-nav="privacy">Privacy Policy</a>
-        <a href="contact.html" data-nav="contact">Contact Us</a>
-        <a href="delete-data.html" data-nav="delete-data">Delete My Data</a>
-      </div>
-    </div>
-    <a href="news.html" data-nav="news">News</a>
+  <div class="nav-actions">
+    <a class="nav-cta" href="https://tidycal.com/astralstudios/schedule" target="_blank" rel="noopener">
+      Schedule Meeting
+    </a>
+    <button class="ham nav-menu-btn" id="ham-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mob">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <button class="ham" id="ham-btn" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 
-<div class="mob-menu" id="mob">
-  <a href="index.html" data-nav="home">Home</a>
-  <div class="mob-lbl">Games</div>
-  <a href="astral.html" data-nav="astral" style="padding-left:20px">Astral</a>
-  <a href="drunken-decks.html" data-nav="drunken-decks" style="padding-left:20px">Drunken Decks</a>
-  <div class="mob-lbl">Services</div>
-  <a href="services.html" data-nav="services" style="padding-left:20px">Explore Our Services</a>
-  <a href="GameDevelopment.html" data-nav="services-game" style="padding-left:20px">Game Development</a>
-  <a href="WebDevelopment.html" data-nav="services-web" style="padding-left:20px">Web Development</a>
-  <div class="mob-lbl">More</div>
-  <a href="report-bug.html" data-nav="report-bug" style="padding-left:20px">Report A Bug</a>
-  <a href="privacy.html" data-nav="privacy" style="padding-left:20px">Privacy Policy</a>
-  <a href="contact.html" data-nav="contact" style="padding-left:20px">Contact Us</a>
-  <a href="delete-data.html" data-nav="delete-data" style="padding-left:20px">Delete My Data</a>
-  <a href="news.html" data-nav="news">News</a>
+<div class="nav-panel" id="mob" aria-hidden="true">
+  <div class="nav-panel-head">
+    <span>Navigation</span>
+    <a href="https://tidycal.com/astralstudios/schedule" target="_blank" rel="noopener">Schedule</a>
+  </div>
+  <div class="nav-panel-grid">
+    <div class="nav-panel-section">
+      <div class="nav-panel-kicker">Studio</div>
+      <a class="nav-panel-link" href="index.html" data-nav="home">
+        <span>Home</span><small>Main site</small>
+      </a>
+      <a class="nav-panel-link" href="news.html" data-nav="news">
+        <span>News</span><small>Updates</small>
+      </a>
+    </div>
+    <div class="nav-panel-section">
+      <div class="nav-panel-kicker">Games</div>
+      <a class="nav-panel-link" href="astral.html" data-nav="astral">
+        <span>Astral</span><small>Sandbox game</small>
+      </a>
+      <a class="nav-panel-link" href="drunken-decks.html" data-nav="drunken-decks">
+        <span>Drunken Decks</span><small>Card game</small>
+      </a>
+    </div>
+    <div class="nav-panel-section">
+      <div class="nav-panel-kicker">Services</div>
+      <a class="nav-panel-link" href="services.html" data-nav="services">
+        <span>Services</span><small>What we build</small>
+      </a>
+      <a class="nav-panel-link" href="GameDevelopment.html" data-nav="services-game">
+        <span>Game Development</span><small>Unity and systems</small>
+      </a>
+      <a class="nav-panel-link" href="WebDevelopment.html" data-nav="services-web">
+        <span>Web Development</span><small>Sites and apps</small>
+      </a>
+    </div>
+    <div class="nav-panel-section">
+      <div class="nav-panel-kicker">Support</div>
+      <a class="nav-panel-link" href="contact.html" data-nav="contact">
+        <span>Contact</span><small>Start a conversation</small>
+      </a>
+      <a class="nav-panel-link" href="report-bug.html" data-nav="report-bug">
+        <span>Report A Bug</span><small>Help us fix it</small>
+      </a>
+      <a class="nav-panel-link" href="privacy.html" data-nav="privacy">
+        <span>Privacy Policy</span><small>Data details</small>
+      </a>
+      <a class="nav-panel-link" href="delete-data.html" data-nav="delete-data">
+        <span>Delete My Data</span><small>Account requests</small>
+      </a>
+    </div>
+  </div>
 </div>`;
 
   document.body.insertAdjacentHTML('afterbegin', NAV_HTML);
@@ -67,7 +81,36 @@
     });
   }
 
-  document.getElementById('ham-btn').addEventListener('click', function () {
-    document.getElementById('mob').classList.toggle('open');
+  const menuButton = document.getElementById('ham-btn');
+  const menu = document.getElementById('mob');
+
+  function setMenu(open) {
+    menu.classList.toggle('open', open);
+    menu.setAttribute('aria-hidden', String(!open));
+    menuButton.classList.toggle('active', open);
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+
+  menuButton.addEventListener('click', function () {
+    setMenu(!menu.classList.contains('open'));
+  });
+
+  menu.addEventListener('click', function (event) {
+    if (event.target.closest('a')) {
+      setMenu(false);
+    }
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!event.target.closest('nav') && !event.target.closest('#mob')) {
+      setMenu(false);
+    }
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      setMenu(false);
+    }
   });
 })();
