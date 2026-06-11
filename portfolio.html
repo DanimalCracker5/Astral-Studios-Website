@@ -17,10 +17,10 @@
 
   <div class="hero portfolio-hero">
     <div class="hero-glow"></div>
-    <div class="hero-badge"><span class="hero-badge-dot"></span>Web Development</div>
+    <div class="hero-badge"><span class="hero-badge-dot"></span>Studio Portfolio</div>
     <h1 class="page-title">PORTFOLIO</h1>
     <div class="hero-rule"></div>
-    <p class="hero-sub">A focused look at websites and web projects built through Astral Studios.</p>
+    <p class="hero-sub">A look at some of our website and game projects built through Astral Studios LLC.</p>
     <div class="btn-row home-hero-actions">
       <a class="btn btn-primary" href="https://tidycal.com/astralstudios/schedule" target="_blank" rel="noopener">Schedule a Meeting</a>
       <a class="btn btn-ghost" href="WebDevelopment.html">Web Development</a>
@@ -28,13 +28,13 @@
   </div>
 
   <main class="portfolio-page">
-    <section class="portfolio-intro">
+    <section class="portfolio-intro" data-portfolio-section="websites">
       <div>
         <div class="portfolio-eyebrow">Our Work</div>
         <h2>Websites</h2>
       </div>
     </section>
-    <section class="portfolio-showcase">
+    <section class="portfolio-showcase" data-portfolio-section="websites">
       <article class="work-row work-featured">
         <div class="work-copy">
           <div class="work-kicker">Company Website</div>
@@ -59,7 +59,7 @@
         <div class="work-copy">
           <div class="work-kicker">Calculator Tool</div>
           <h3>Inertia : Financial Calculator</h3>
-          <p>A finance-focused calculator project built around quick inputs, clear output, and a cleaner interface for turning numbers into something easier to act on.</p>
+          <p>A financial calculator interface for making it easier to visualize information to do with pay.</p>
           <div class="work-tags">
             <span>Financial Tool</span>
             <span>Calculator UI</span>
@@ -141,6 +141,36 @@
       </article>
 
     </section>
+
+    <section class="portfolio-intro portfolio-section-heading" data-portfolio-section="games">
+      <div>
+        <div class="portfolio-eyebrow">Our Work</div>
+        <h2>Games</h2>
+      </div>
+    </section>
+    <section class="portfolio-showcase" data-portfolio-section="games">
+      <article class="work-row work-featured">
+        <div class="work-copy">
+          <div class="work-kicker">Open World Sandbox</div>
+          <h3>Astral Projection Game</h3>
+          <p>Astral is a cross-platform open world sandbox game built around vehicles, free play, combat arenas, and an astral projection ability that lets players leave their body and explore the world.</p>
+          <div class="work-tags">
+            <span>Unity Game</span>
+            <span>Open World</span>
+            <span>Multi-Platform</span>
+          </div>
+          <a class="work-link" href="astral.html">View Game -&gt;</a>
+        </div>
+        <a class="work-preview" href="astral.html" aria-label="Open Astral Projection Game">
+          <div class="browser-bar"><span></span><span></span><span></span><em>astralstudios.llc/astral</em></div>
+          <div class="preview-screen astral-game-screen">
+            <img src="assets/astral.png" alt="Astral game artwork"/>
+            <strong>Astral</strong>
+            <small>Astral projection sandbox</small>
+          </div>
+        </a>
+      </article>
+    </section>
   </main>
 
   <div class="cta-wrap">
@@ -163,6 +193,26 @@
     <a href="contact.html">Contact</a>
   </div>
 </footer>
+
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var requested = (params.get('section') || window.location.hash.replace('#','')).toLowerCase();
+  if (requested !== 'games' && requested !== 'websites') return;
+
+  var main = document.querySelector('.portfolio-page');
+  if (!main) return;
+
+  var sections = Array.prototype.slice.call(main.querySelectorAll('[data-portfolio-section="' + requested + '"]'));
+  sections.reverse().forEach(function(section){
+    main.insertBefore(section, main.firstElementChild);
+  });
+
+  Array.prototype.slice.call(main.querySelectorAll('.portfolio-intro')).forEach(function(section, index){
+    section.classList.toggle('portfolio-section-heading', index > 0);
+  });
+})();
+</script>
 
 </body>
 </html>

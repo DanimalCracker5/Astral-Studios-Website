@@ -534,6 +534,7 @@ nav{
   font-size:.84rem;
   line-height:1.8;
 }
+.portfolio-section-heading{margin-top:58px}
 .portfolio-showcase{
   display:flex;
   flex-direction:column;
@@ -626,6 +627,8 @@ nav{
 .subpressions-screen{background:linear-gradient(135deg,rgba(62,207,142,.14),transparent 48%),radial-gradient(circle at 70% 30%,rgba(34,211,238,.08),transparent 34%),#080808}
 .inertia-screen{background:linear-gradient(135deg,rgba(34,211,238,.14),transparent 48%),radial-gradient(circle at 32% 34%,rgba(129,140,248,.12),transparent 36%),#080808}
 .arpeggio-screen{background:linear-gradient(135deg,rgba(129,140,248,.14),transparent 48%),radial-gradient(circle at 68% 30%,rgba(62,207,142,.1),transparent 34%),#080808}
+.astral-game-screen{background:radial-gradient(circle at 50% 32%,rgba(34,211,238,.16),transparent 42%),linear-gradient(135deg,rgba(129,140,248,.16),transparent 50%),#080808}
+.astral-game-screen img{width:92px;height:92px;border-radius:22px;object-fit:cover}
 .sewfine-screen{background:linear-gradient(135deg,rgba(240,80,80,.11),transparent 48%),radial-gradient(circle at 72% 30%,rgba(62,207,142,.08),transparent 34%),#080808}
 .perfection-screen{background:linear-gradient(135deg,rgba(56,189,248,.14),transparent 48%),radial-gradient(circle at 72% 28%,rgba(240,80,80,.1),transparent 34%),#080808}
 .work-copy{
