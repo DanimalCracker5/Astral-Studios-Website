@@ -404,7 +404,7 @@ nav{
   text-transform:uppercase;
 }
 .nav-panel-head a{color:var(--blue);text-decoration:none}
-.nav-panel-grid{display:grid;grid-template-columns:1.05fr 1fr 1.2fr 1.15fr;gap:12px}
+.nav-panel-grid{display:grid;grid-template-columns:1.05fr 1fr 1.15fr;gap:12px}
 .nav-panel-section{min-width:0}
 .nav-panel-kicker{
   margin:0 0 7px 8px;

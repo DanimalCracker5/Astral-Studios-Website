@@ -43,18 +43,6 @@
       </a>
     </div>
     <div class="nav-panel-section">
-      <div class="nav-panel-kicker">Services</div>
-      <a class="nav-panel-link" href="services.html" data-nav="services">
-        <span>Services</span><small>What we build</small>
-      </a>
-      <a class="nav-panel-link" href="GameDevelopment.html" data-nav="services-game">
-        <span>Game Development</span><small>Unity and systems</small>
-      </a>
-      <a class="nav-panel-link" href="WebDevelopment.html" data-nav="services-web">
-        <span>Web Development</span><small>Sites and apps</small>
-      </a>
-    </div>
-    <div class="nav-panel-section">
       <div class="nav-panel-kicker">Support</div>
       <a class="nav-panel-link" href="contact.html" data-nav="contact">
         <span>Contact</span><small>Start a conversation</small>

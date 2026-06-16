@@ -105,7 +105,7 @@ button,input{font:inherit}
   gap:9px;
   margin-top:20px;
 }
-.actions button{
+.actions button,.actions a{
   min-height:42px;
   border:1px solid var(--line);
   border-radius:999px;
@@ -116,6 +116,11 @@ button,input{font:inherit}
   font-size:.62rem;
   letter-spacing:.09em;
   text-transform:uppercase;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
 }
 .actions .primary{
   grid-column:1/-1;
@@ -123,6 +128,17 @@ button,input{font:inherit}
   border-color:var(--cyan);
   color:#001113;
   font-weight:500;
+}
+.actions a[aria-disabled="true"]{
+  opacity:.55;
+  pointer-events:none;
+}
+.download-status{
+  min-height:18px;
+  margin-top:10px;
+  color:var(--muted);
+  font-size:.76rem;
+  line-height:1.35;
 }
 .preview{
   min-height:520px;
@@ -361,10 +377,11 @@ button,input{font:inherit}
       </div>
 
       <div class="actions">
-        <button class="primary" id="download-png" type="button">Download PNG</button>
-        <button id="download-svg" type="button">Download SVG</button>
+        <a class="primary" id="download-png" href="#" download="astral-business-card-300dpi.png" aria-disabled="true">Download PNG</a>
+        <a id="download-svg" href="#" download="astral-business-card.svg" aria-disabled="true">Download SVG</a>
         <button id="print-card" type="button">Print</button>
       </div>
+      <div class="download-status" id="download-status" role="status" aria-live="polite"></div>
     </section>
 
     <section class="preview" aria-label="Business card preview">
@@ -436,6 +453,7 @@ const qrInput = $('#qr-input');
 const qrFileLabel = $('#qr-file-label');
 const qrBox = $('#qr-box');
 const qrPreview = $('#qr-preview');
+const downloadStatus = $('#download-status');
 
 function updatePreview(){
   state.name = nameInput.value.trim() || 'Daniel Gentry';
@@ -476,9 +494,23 @@ qrInput.addEventListener('change', () => {
 function loadImage(src){
   return new Promise((resolve,reject) => {
     const image = new Image();
+    image.crossOrigin = 'anonymous';
     image.onload = () => resolve(image);
     image.onerror = reject;
     image.src = src;
+  });
+}
+
+async function fileToDataUrl(src){
+  if (src.startsWith('data:')) return src;
+  const response = await fetch(src);
+  if (!response.ok) throw new Error('Could not load ' + src);
+  const blob = await response.blob();
+  return new Promise((resolve,reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
   });
 }
 
@@ -581,15 +613,6 @@ async function renderCanvas(){
   return canvas;
 }
 
-function downloadDataUrl(dataUrl,filename){
-  const link = document.createElement('a');
-  link.href = dataUrl;
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-}
-
 function escapeXml(text){
   return text.replace(/[<>&"']/g, char => ({
     '<':'&lt;',
@@ -600,22 +623,37 @@ function escapeXml(text){
   }[char]));
 }
 
-async function downloadPng(){
-  const canvas = await renderCanvas();
-  downloadDataUrl(canvas.toDataURL('image/png'),'astral-business-card-300dpi.png');
+function setDownloadStatus(message){
+  downloadStatus.textContent = message;
 }
 
-function downloadSvg(){
-  updatePreview();
+function setDownloadLink(link, url){
+  if (link.dataset.objectUrl) URL.revokeObjectURL(link.dataset.objectUrl);
+  link.href = url;
+  link.dataset.objectUrl = url;
+  link.setAttribute('aria-disabled','false');
+}
+
+function disableDownloadLinks(){
+  ['#download-png','#download-svg'].forEach(selector => {
+    const link = $(selector);
+    link.href = '#';
+    link.setAttribute('aria-disabled','true');
+  });
+}
+
+async function buildSvg(){
+  const logoDataUrl = await fileToDataUrl('assets/logo.png');
+  const qrDataUrl = await fileToDataUrl(state.qrDataUrl);
   const qrMarkup = state.qrDataUrl
-    ? `<rect x="588" y="84" width="405" height="405" fill="#fff"/><image href="${state.qrDataUrl}" x="606" y="102" width="369" height="369" preserveAspectRatio="xMidYMid slice"/>`
+    ? `<rect x="588" y="84" width="405" height="405" fill="#fff"/><image href="${qrDataUrl}" x="606" y="102" width="369" height="369" preserveAspectRatio="xMidYMid slice"/>`
     : `<rect x="588" y="84" width="405" height="405" fill="#fff"/><text x="790" y="277" text-anchor="middle" fill="#111" font-family="monospace" font-size="18">QR</text><text x="790" y="305" text-anchor="middle" fill="#111" font-family="monospace" font-size="18">CODE</text>`;
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="3.5in" height="2in" viewBox="0 0 1050 600">
   <rect width="1050" height="600" fill="#000"/>
   <text x="75" y="84" fill="#fff" font-family="Arial, sans-serif" font-size="45" font-weight="700">${escapeXml(state.name)}</text>
   <rect x="75" y="137" width="96" height="31" rx="5" fill="#070707" stroke="#262626" stroke-width="2"/>
   <text x="88" y="144" fill="#bdbdbd" font-family="monospace" font-size="14" letter-spacing="1.6">${escapeXml(state.title.toUpperCase())}</text>
-  <image href="assets/logo.png" x="75" y="216" width="81" height="81" preserveAspectRatio="xMidYMid meet"/>
+  <image href="${logoDataUrl}" x="75" y="216" width="81" height="81" preserveAspectRatio="xMidYMid meet"/>
   <text x="174" y="216" fill="#fff" font-family="Arial, sans-serif" font-size="31" font-weight="700">Astral Studios LLC</text>
   <text x="174" y="264" fill="#a7a7a7" font-family="monospace" font-size="13" letter-spacing="2.4">WEB DEVELOPMENT &amp; SOFTWARE DEVELOPMENT</text>
   <text x="75" y="378" fill="#909090" font-family="monospace" font-size="12" letter-spacing="2">PHONE</text>
@@ -630,17 +668,59 @@ function downloadSvg(){
   <text x="790" y="520" text-anchor="middle" fill="#d9d9d9" font-family="monospace" font-size="16" letter-spacing="2">SCAN TO VIEW WEBSITE</text>
   <rect x="1" y="1" width="1048" height="598" fill="none" stroke="#242424" stroke-width="2"/>
 </svg>`;
-  const blob = new Blob([svg], { type:'image/svg+xml' });
-  downloadDataUrl(URL.createObjectURL(blob),'astral-business-card.svg');
+  return svg;
 }
 
-$('#download-png').addEventListener('click', downloadPng);
-$('#download-svg').addEventListener('click', downloadSvg);
+let downloadPrepTimer = 0;
+let downloadPrepRun = 0;
+
+function scheduleDownloadPrep(){
+  window.clearTimeout(downloadPrepTimer);
+  disableDownloadLinks();
+  setDownloadStatus('Preparing downloads...');
+  downloadPrepTimer = window.setTimeout(prepareDownloads, 120);
+}
+
+async function prepareDownloads(){
+  const run = ++downloadPrepRun;
+  try {
+    updatePreview();
+    const canvas = await renderCanvas();
+    const pngBlob = await new Promise(resolve => canvas.toBlob(resolve,'image/png'));
+    if (!pngBlob) throw new Error('Could not create PNG file.');
+    const svg = await buildSvg();
+    if (run !== downloadPrepRun) return;
+    const pngUrl = URL.createObjectURL(pngBlob);
+  const blob = new Blob([svg], { type:'image/svg+xml' });
+    const svgUrl = URL.createObjectURL(blob);
+    setDownloadLink($('#download-png'), pngUrl);
+    setDownloadLink($('#download-svg'), svgUrl);
+    setDownloadStatus('Downloads ready.');
+  } catch (error) {
+    setDownloadStatus('Download prep failed: ' + error.message);
+  }
+}
+
+$('#download-png').addEventListener('click', event => {
+  if ($('#download-png').getAttribute('aria-disabled') === 'true') event.preventDefault();
+});
+$('#download-svg').addEventListener('click', event => {
+  if ($('#download-svg').getAttribute('aria-disabled') === 'true') event.preventDefault();
+});
 $('#print-card').addEventListener('click', () => {
   updatePreview();
   window.print();
 });
 updatePreview();
+[
+  nameInput,
+  titleInput,
+  websiteInput,
+  phoneInput,
+  emailInput,
+  locationInput
+].forEach(input => input.addEventListener('input', scheduleDownloadPrep));
+scheduleDownloadPrep();
 </script>
 </body>
 </html>
