@@ -152,6 +152,9 @@ button,input{font:inherit}
   bottom:58px;
 }
 .brand{
+  position:absolute;
+  left:0;
+  top:88px;
   display:flex;
   align-items:center;
   gap:14px;
@@ -184,7 +187,7 @@ button,input{font:inherit}
 .identity{
   position:absolute;
   left:0;
-  top:88px;
+  top:0;
 }
 .person{
   font-size:32px;
@@ -321,17 +324,17 @@ button,input{font:inherit}
 
       <div class="field">
         <label for="name-input">Name</label>
-        <input id="name-input" type="text" value="Daniel" autocomplete="name"/>
+        <input id="name-input" type="text" value="Daniel Gentry" autocomplete="name"/>
       </div>
 
       <div class="field">
         <label for="title-input">Title</label>
-        <input id="title-input" type="text" value="Owner" autocomplete="organization-title"/>
+        <input id="title-input" type="text" value="Owner (Software Developer)" autocomplete="organization-title"/>
       </div>
 
       <div class="field">
         <label for="website-input">Website</label>
-        <input id="website-input" type="text" value="Astralstudios.llc" inputmode="url"/>
+        <input id="website-input" type="text" value="astralstudios.llc" inputmode="url"/>
       </div>
 
       <div class="field">
@@ -341,7 +344,7 @@ button,input{font:inherit}
 
       <div class="field">
         <label for="email-input">Email</label>
-        <input id="email-input" type="text" value="Astralstudioscontact@gmail.com" inputmode="email"/>
+        <input id="email-input" type="text" value="astralstudioscontact@gmail.com" inputmode="email"/>
       </div>
 
       <div class="field">
@@ -376,8 +379,8 @@ button,input{font:inherit}
           </div>
 
           <div class="identity">
-            <div class="person" id="card-name">Daniel</div>
-            <div class="title" id="card-title">Owner</div>
+            <div class="person" id="card-name">Daniel Gentry</div>
+            <div class="title" id="card-title">Owner (Software Developer)</div>
           </div>
 
           <div class="contact-list">
@@ -387,11 +390,11 @@ button,input{font:inherit}
             </div>
             <div class="contact-line">
               <span class="contact-label">Email</span>
-              <span class="contact-value" id="card-email">Astralstudioscontact@gmail.com</span>
+              <span class="contact-value" id="card-email">astralstudioscontact@gmail.com</span>
             </div>
             <div class="contact-line">
               <span class="contact-label">Web</span>
-              <span class="contact-value" id="card-web-contact">Astralstudios.llc</span>
+              <span class="contact-value" id="card-web-contact">astralstudios.llc</span>
             </div>
             <div class="contact-line">
               <span class="contact-label">Location</span>
@@ -413,11 +416,11 @@ button,input{font:inherit}
 
 <script>
 const state = {
-  name: 'Daniel',
-  title: 'Owner',
-  website: 'Astralstudios.llc',
+  name: 'Daniel Gentry',
+  title: 'Owner (Software Developer)',
+  website: 'astralstudios.llc',
   phone: '(248) 340-3369',
-  email: 'Astralstudioscontact@gmail.com',
+  email: 'astralstudioscontact@gmail.com',
   location: 'White Lake, Michigan',
   qrDataUrl: 'assets/astralstudios-qr.png'
 };
@@ -435,11 +438,11 @@ const qrBox = $('#qr-box');
 const qrPreview = $('#qr-preview');
 
 function updatePreview(){
-  state.name = nameInput.value.trim() || 'Daniel';
-  state.title = titleInput.value.trim() || 'Owner';
-  state.website = websiteInput.value.trim() || 'Astralstudios.llc';
+  state.name = nameInput.value.trim() || 'Daniel Gentry';
+  state.title = titleInput.value.trim() || 'Owner (Software Developer)';
+  state.website = websiteInput.value.trim() || 'astralstudios.llc';
   state.phone = phoneInput.value.trim() || '(248) 340-3369';
-  state.email = emailInput.value.trim() || 'Astralstudioscontact@gmail.com';
+  state.email = emailInput.value.trim() || 'astralstudioscontact@gmail.com';
   state.location = locationInput.value.trim() || 'White Lake, Michigan';
   $('#card-name').textContent = state.name;
   $('#card-title').textContent = state.title;
@@ -512,22 +515,22 @@ async function renderCanvas(){
   ctx.fillStyle = '#000';
   ctx.fillRect(0,0,1050,600);
 
-  ctx.drawImage(logo,75,84,81,81);
+  ctx.drawImage(logo,75,216,81,81);
 
   ctx.textBaseline = 'top';
   ctx.textAlign = 'left';
   ctx.fillStyle = '#fff';
   ctx.font = '700 31px "DM Sans", Arial, sans-serif';
-  ctx.fillText('Astral Studios LLC',174,84);
+  ctx.fillText('Astral Studios LLC',174,216);
 
   ctx.fillStyle = '#a7a7a7';
   ctx.font = '500 13px "DM Mono", Consolas, monospace';
-  ctx.fillText('WEB DEVELOPMENT & SOFTWARE DEVELOPMENT',174,132);
+  ctx.fillText('WEB DEVELOPMENT & SOFTWARE DEVELOPMENT',174,264);
 
   const nameSize = fitText(ctx,state.name,360,45,'"DM Sans", Arial, sans-serif','700');
   ctx.fillStyle = '#fff';
   ctx.font = `700 ${nameSize}px "DM Sans", Arial, sans-serif`;
-  ctx.fillText(state.name,75,216);
+  ctx.fillText(state.name,75,84);
 
   const titleText = state.title.toUpperCase();
   ctx.font = '500 14px "DM Mono", Consolas, monospace';
@@ -536,11 +539,11 @@ async function renderCanvas(){
   ctx.strokeStyle = '#262626';
   ctx.lineWidth = 2;
   ctx.beginPath();
-  ctx.roundRect(75,269,titleW + 26,31,5);
+  ctx.roundRect(75,137,titleW + 26,31,5);
   ctx.fill();
   ctx.stroke();
   ctx.fillStyle = '#bdbdbd';
-  ctx.fillText(titleText,88,276);
+  ctx.fillText(titleText,88,144);
 
   const contactRows = [
     ['PHONE', state.phone],
@@ -609,12 +612,12 @@ function downloadSvg(){
     : `<rect x="588" y="84" width="405" height="405" fill="#fff"/><text x="790" y="277" text-anchor="middle" fill="#111" font-family="monospace" font-size="18">QR</text><text x="790" y="305" text-anchor="middle" fill="#111" font-family="monospace" font-size="18">CODE</text>`;
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="3.5in" height="2in" viewBox="0 0 1050 600">
   <rect width="1050" height="600" fill="#000"/>
-  <image href="assets/logo.png" x="75" y="84" width="81" height="81" preserveAspectRatio="xMidYMid meet"/>
-  <text x="174" y="84" fill="#fff" font-family="Arial, sans-serif" font-size="31" font-weight="700">Astral Studios LLC</text>
-  <text x="174" y="132" fill="#a7a7a7" font-family="monospace" font-size="13" letter-spacing="2.4">WEB DEVELOPMENT &amp; SOFTWARE DEVELOPMENT</text>
-  <text x="75" y="216" fill="#fff" font-family="Arial, sans-serif" font-size="45" font-weight="700">${escapeXml(state.name)}</text>
-  <rect x="75" y="269" width="96" height="31" rx="5" fill="#070707" stroke="#262626" stroke-width="2"/>
-  <text x="88" y="276" fill="#bdbdbd" font-family="monospace" font-size="14" letter-spacing="1.6">${escapeXml(state.title.toUpperCase())}</text>
+  <text x="75" y="84" fill="#fff" font-family="Arial, sans-serif" font-size="45" font-weight="700">${escapeXml(state.name)}</text>
+  <rect x="75" y="137" width="96" height="31" rx="5" fill="#070707" stroke="#262626" stroke-width="2"/>
+  <text x="88" y="144" fill="#bdbdbd" font-family="monospace" font-size="14" letter-spacing="1.6">${escapeXml(state.title.toUpperCase())}</text>
+  <image href="assets/logo.png" x="75" y="216" width="81" height="81" preserveAspectRatio="xMidYMid meet"/>
+  <text x="174" y="216" fill="#fff" font-family="Arial, sans-serif" font-size="31" font-weight="700">Astral Studios LLC</text>
+  <text x="174" y="264" fill="#a7a7a7" font-family="monospace" font-size="13" letter-spacing="2.4">WEB DEVELOPMENT &amp; SOFTWARE DEVELOPMENT</text>
   <text x="75" y="378" fill="#909090" font-family="monospace" font-size="12" letter-spacing="2">PHONE</text>
   <text x="198" y="374" fill="#2f9fad" font-family="Arial, sans-serif" font-size="20">${escapeXml(state.phone)}</text>
   <text x="75" y="412" fill="#909090" font-family="monospace" font-size="12" letter-spacing="2">EMAIL</text>
