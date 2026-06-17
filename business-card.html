@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/shared.css"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -28,20 +29,57 @@ body{
 }
 button,input{font:inherit}
 .generator{
-  width:min(1120px,calc(100vw - 32px));
-  min-height:100vh;
+  width:min(900px,calc(100vw - 32px));
+  min-height:calc(100vh - 58px);
   margin:0 auto;
   padding:36px 0;
-  display:grid;
-  grid-template-columns:310px minmax(0,1fr);
-  gap:28px;
-  align-items:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:18px;
 }
-.controls{
+.editor{
+  width:100%;
   background:var(--panel);
   border:1px solid var(--line);
   border-radius:8px;
-  padding:22px;
+  overflow:hidden;
+}
+.editor summary{
+  min-height:54px;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  color:var(--text);
+  cursor:pointer;
+  list-style:none;
+  font-family:'DM Mono',Consolas,monospace;
+  font-size:.68rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.editor summary::-webkit-details-marker{display:none}
+.editor summary::after{
+  content:'+';
+  color:var(--cyan);
+  font-size:1rem;
+  line-height:1;
+}
+.editor[open] summary{
+  border-bottom:1px solid var(--line);
+}
+.editor[open] summary::after{content:'−'}
+.editor summary:hover{background:rgba(255,255,255,.025)}
+.editor summary:focus-visible{
+  outline:2px solid var(--cyan);
+  outline-offset:-3px;
+}
+.controls{
+  width:min(620px,100%);
+  margin:0 auto;
+  padding:24px;
 }
 .controls h1{
   font-size:1rem;
@@ -140,8 +178,17 @@ button,input{font:inherit}
   font-size:.76rem;
   line-height:1.35;
 }
+.print-note{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:.72rem;
+  line-height:1.5;
+  text-align:center;
+}
+.print-sheet{display:none}
 .preview{
-  min-height:520px;
+  width:100%;
+  min-height:480px;
   display:grid;
   place-items:center;
   padding:24px;
@@ -149,9 +196,16 @@ button,input{font:inherit}
   border-radius:8px;
   background:#121212;
 }
-.card{
+.card-stage{
   width:min(100%,700px);
-  aspect-ratio:3.5/2;
+  aspect-ratio:7/4;
+  position:relative;
+  overflow:hidden;
+  border-radius:10px;
+}
+.business-card{
+  width:700px;
+  height:400px;
   position:relative;
   overflow:hidden;
   display:block;
@@ -159,6 +213,8 @@ button,input{font:inherit}
   border:1px solid #242424;
   border-radius:10px;
   box-shadow:0 28px 80px rgba(0,0,0,.55);
+  transform:scale(var(--card-scale,1));
+  transform-origin:top left;
 }
 .card-left{
   position:absolute;
@@ -303,40 +359,115 @@ button,input{font:inherit}
 }
 @media(max-width:860px){
   .generator{
-    grid-template-columns:1fr;
-    align-items:start;
     padding:20px 0;
   }
   .preview{min-height:0}
 }
 @media(max-width:560px){
   .generator{width:calc(100vw - 20px)}
-  .controls,.preview{padding:16px}
+  .preview{padding:12px}
+  .controls{padding:20px 16px}
+  .editor summary{min-height:50px}
   .actions{grid-template-columns:1fr}
   .actions .primary{grid-column:auto}
 }
-@page{size:auto;margin:.25in}
+@page{size:letter portrait;margin:0}
 @media print{
-  body{background:#fff}
-  .generator{display:block;width:auto;min-height:auto;padding:0}
-  .controls{display:none}
-  .preview{display:block;min-height:auto;padding:0;border:0;background:#fff}
-  .card{
+  html,body{
+    width:8.5in;
+    height:11in;
+    margin:0;
+    padding:0;
+    background:#fff;
+  }
+  body::before{display:none}
+  body > :not(.print-sheet){display:none !important}
+  .print-sheet{
+    width:8.5in;
+    height:11in;
+    padding:.5in .75in;
+    display:grid !important;
+    grid-template-columns:repeat(2,3.5in);
+    grid-template-rows:repeat(5,2in);
+    gap:0;
+    overflow:hidden;
+    background:#fff;
+  }
+  .print-card{
     width:3.5in;
     height:2in;
-    border-radius:.05in;
-    box-shadow:none;
-    print-color-adjust:exact;
-    -webkit-print-color-adjust:exact;
+    position:relative;
+    overflow:hidden;
+    outline:.35pt solid #888;
+    outline-offset:-.35pt;
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+  .print-card img{
+    display:block;
+    width:3.5in;
+    height:2in;
+    object-fit:fill;
   }
 }
 </style>
 </head>
-<body>
+<body data-page="business-card">
+  <script src="assets/nav.js"></script>
   <main class="generator">
-    <section class="controls" aria-label="Business card controls">
-      <h1>Business Card Generator</h1>
-      <p>Upload a QR code, enter the card holder details, then print or download.</p>
+    <section class="preview" aria-label="Business card preview">
+      <div class="card-stage" id="card-stage">
+        <article class="business-card" id="card-preview" aria-label="Astral Studios business card preview">
+          <section class="card-left">
+            <div class="brand">
+              <img src="assets/logo.png" alt="Astral Studios logo"/>
+              <div class="brand-copy">
+                <div class="company-name">Astral Studios LLC</div>
+                <div class="tagline">Web Development & Software Development</div>
+              </div>
+            </div>
+
+            <div class="identity">
+              <div class="person" id="card-name">Daniel Gentry</div>
+              <div class="title" id="card-title">Owner</div>
+            </div>
+
+            <div class="contact-list">
+              <div class="contact-line">
+                <span class="contact-label">Phone</span>
+                <span class="contact-value" id="card-phone">(248) 340-3369</span>
+              </div>
+              <div class="contact-line">
+                <span class="contact-label">Email</span>
+                <span class="contact-value" id="card-email">astralstudioscontact@gmail.com</span>
+              </div>
+              <div class="contact-line">
+                <span class="contact-label">Web</span>
+                <span class="contact-value" id="card-web-contact">astralstudios.llc</span>
+              </div>
+              <div class="contact-line">
+                <span class="contact-label">Location</span>
+                <span class="contact-value" id="card-location">White Lake, Michigan</span>
+              </div>
+            </div>
+          </section>
+
+          <aside class="card-right">
+            <div class="qr-box has-image" id="qr-box">
+              <img id="qr-preview" src="assets/astralstudios-qr.png" alt="Astral Studios QR code"/>
+              <span class="qr-placeholder">QR<br/>Code</span>
+            </div>
+            <div class="website" id="card-website">Scan to view website</div>
+          </aside>
+        </article>
+      </div>
+    </section>
+
+    <details class="editor">
+      <summary>Edit Card</summary>
+      <section class="controls" aria-label="Business card controls">
+        <h1>Modify Business Card</h1>
+        <p>Upload your personal QR code, enter your details, then print or download.</p>
 
       <div class="field">
         <label for="name-input">Name</label>
@@ -345,7 +476,7 @@ button,input{font:inherit}
 
       <div class="field">
         <label for="title-input">Title</label>
-        <input id="title-input" type="text" value="Owner (Software Developer)" autocomplete="organization-title"/>
+        <input id="title-input" type="text" value="Owner" autocomplete="organization-title"/>
       </div>
 
       <div class="field">
@@ -382,59 +513,28 @@ button,input{font:inherit}
         <button id="print-card" type="button">Print</button>
       </div>
       <div class="download-status" id="download-status" role="status" aria-live="polite"></div>
-    </section>
-
-    <section class="preview" aria-label="Business card preview">
-      <article class="card" id="card-preview" aria-label="Astral Studios business card preview">
-        <section class="card-left">
-          <div class="brand">
-            <img src="assets/logo.png" alt="Astral Studios logo"/>
-            <div class="brand-copy">
-              <div class="company-name">Astral Studios LLC</div>
-              <div class="tagline">Web Development & Software Development</div>
-            </div>
-          </div>
-
-          <div class="identity">
-            <div class="person" id="card-name">Daniel Gentry</div>
-            <div class="title" id="card-title">Owner (Software Developer)</div>
-          </div>
-
-          <div class="contact-list">
-            <div class="contact-line">
-              <span class="contact-label">Phone</span>
-              <span class="contact-value" id="card-phone">(248) 340-3369</span>
-            </div>
-            <div class="contact-line">
-              <span class="contact-label">Email</span>
-              <span class="contact-value" id="card-email">astralstudioscontact@gmail.com</span>
-            </div>
-            <div class="contact-line">
-              <span class="contact-label">Web</span>
-              <span class="contact-value" id="card-web-contact">astralstudios.llc</span>
-            </div>
-            <div class="contact-line">
-              <span class="contact-label">Location</span>
-              <span class="contact-value" id="card-location">White Lake, Michigan</span>
-            </div>
-          </div>
-        </section>
-
-        <aside class="card-right">
-          <div class="qr-box has-image" id="qr-box">
-            <img id="qr-preview" src="assets/astralstudios-qr.png" alt="Astral Studios QR code"/>
-            <span class="qr-placeholder">QR<br/>Code</span>
-          </div>
-          <div class="website" id="card-website">Scan to view website</div>
-        </aside>
-      </article>
-    </section>
+      <p class="print-note">Print creates a 10-card US Letter cutter sheet. In the print dialog, choose Actual size or 100% scale.</p>
+      </section>
+    </details>
   </main>
+
+  <section class="print-sheet" id="print-sheet" aria-hidden="true">
+    <div class="print-card"><img alt=""/></div>
+    <div class="print-card"><img alt=""/></div>
+    <div class="print-card"><img alt=""/></div>
+    <div class="print-card"><img alt=""/></div>
+    <div class="print-card"><img alt=""/></div>
+    <div class="print-card"><img alt=""/></div>
+    <div class="print-card"><img alt=""/></div>
+    <div class="print-card"><img alt=""/></div>
+    <div class="print-card"><img alt=""/></div>
+    <div class="print-card"><img alt=""/></div>
+  </section>
 
 <script>
 const state = {
   name: 'Daniel Gentry',
-  title: 'Owner (Software Developer)',
+  title: 'Owner',
   website: 'astralstudios.llc',
   phone: '(248) 340-3369',
   email: 'astralstudioscontact@gmail.com',
@@ -457,7 +557,7 @@ const downloadStatus = $('#download-status');
 
 function updatePreview(){
   state.name = nameInput.value.trim() || 'Daniel Gentry';
-  state.title = titleInput.value.trim() || 'Owner (Software Developer)';
+  state.title = titleInput.value.trim() || 'Owner';
   state.website = websiteInput.value.trim() || 'astralstudios.llc';
   state.phone = phoneInput.value.trim() || '(248) 340-3369';
   state.email = emailInput.value.trim() || 'astralstudioscontact@gmail.com';
@@ -470,6 +570,15 @@ function updatePreview(){
   $('#card-email').textContent = state.email;
   $('#card-location').textContent = state.location;
 }
+
+const cardStage = $('#card-stage');
+const cardPreview = $('#card-preview');
+function scaleCardPreview(){
+  const scale = Math.min(1, cardStage.clientWidth / 700);
+  cardPreview.style.setProperty('--card-scale', scale);
+}
+new ResizeObserver(scaleCardPreview).observe(cardStage);
+scaleCardPreview();
 
 nameInput.addEventListener('input', updatePreview);
 titleInput.addEventListener('input', updatePreview);
@@ -707,9 +816,27 @@ $('#download-png').addEventListener('click', event => {
 $('#download-svg').addEventListener('click', event => {
   if ($('#download-svg').getAttribute('aria-disabled') === 'true') event.preventDefault();
 });
-$('#print-card').addEventListener('click', () => {
-  updatePreview();
-  window.print();
+$('#print-card').addEventListener('click', async () => {
+  const printButton = $('#print-card');
+  printButton.disabled = true;
+  setDownloadStatus('Preparing 10-card print sheet...');
+  try {
+    const canvas = await renderCanvas();
+    const printImage = canvas.toDataURL('image/png');
+    const images = Array.from(document.querySelectorAll('.print-card img'));
+    await Promise.all(images.map(image => new Promise((resolve,reject) => {
+      image.onload = resolve;
+      image.onerror = () => reject(new Error('Could not prepare the print sheet.'));
+      image.src = printImage;
+      if (image.complete) resolve();
+    })));
+    setDownloadStatus('Print sheet ready — use Actual size or 100% scale.');
+    window.print();
+  } catch (error) {
+    setDownloadStatus('Print prep failed: ' + error.message);
+  } finally {
+    printButton.disabled = false;
+  }
 });
 updatePreview();
 [
