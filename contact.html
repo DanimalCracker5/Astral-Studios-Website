@@ -30,7 +30,10 @@
 .voice-agent-fallback{
   margin-top:18px;
   display:flex;
+  flex-direction:column;
+  align-items:center;
   justify-content:center;
+  gap:10px;
 }
 .voice-agent-fallback a{
   display:inline-flex;
@@ -47,6 +50,11 @@
   font-size:.62rem;
   letter-spacing:.08em;
   text-decoration:none;
+}
+.voice-agent-fallback .voice-agent-call{
+  background:var(--blue);
+  border-color:rgba(34,211,238,.7);
+  color:#000;
 }
 @media(max-width:680px){
   .voice-agent-embed{padding:16px}
@@ -81,6 +89,7 @@
           expand-text="Open assistant"
         ></elevenlabs-convai>
         <div class="voice-agent-fallback">
+          <a class="voice-agent-call" href="tel:+18884124692">CALL US: (888) 412-4692</a>
           <a href="https://elevenlabs.io/app/talk-to?agent_id=agent_6101kw5y8gahfh9v6405s0swkm1e&amp;branch_id=agtbrch_4201kw5y8htkfkptdfa5zs540hmg" target="_blank" rel="noopener">OPEN AGENT IN ELEVENLABS</a>
         </div>
       </div>
@@ -92,6 +101,7 @@
 <footer>
   <span class="foot-l">© Astral Studios</span>
   <div class="foot-links">
+    <a class="foot-call" href="tel:+18884124692">Call Us: (888) 412-4692</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="report-bug.html">Report a Bug</a>
     <a href="contact.html">Contact</a>

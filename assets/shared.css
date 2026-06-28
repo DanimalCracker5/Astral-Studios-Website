@@ -264,6 +264,26 @@ footer{border-top:1px solid var(--line);padding:18px 28px;display:flex;align-ite
 .foot-links{display:flex;gap:18px}
 .foot-links a{font-size:.7rem;color:var(--dim);text-decoration:none;transition:color .14s}
 .foot-links a:hover{color:var(--sub)}
+.foot-call{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  padding:0 14px;
+  border:1px solid rgba(34,211,238,.28);
+  border-radius:999px;
+  background:rgba(34,211,238,.055);
+  color:var(--blue) !important;
+  font-family:'DM Mono',monospace;
+  font-size:.62rem !important;
+  letter-spacing:.08em;
+  white-space:nowrap;
+}
+.foot-call:hover{
+  border-color:rgba(34,211,238,.48);
+  background:rgba(34,211,238,.1);
+  color:var(--blue) !important;
+}
 
 /* INDEX SPECIFIC */
 .index-hero-sub{font-size:.9rem;color:var(--sub);line-height:1.8;max-width:520px;margin:0 auto 40px}
