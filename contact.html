@@ -25,6 +25,10 @@
 }
 .voice-agent-embed elevenlabs-convai{
   display:block;
+  position:relative !important;
+  inset:auto !important;
+  width:100% !important;
+  max-width:100% !important;
   min-height:520px;
 }
 .voice-agent-fallback{
@@ -57,8 +61,23 @@
   color:#000;
 }
 @media(max-width:680px){
-  .voice-agent-embed{padding:16px}
-  .voice-agent-embed elevenlabs-convai{min-height:460px}
+  .form-wrap{padding:0 14px 64px}
+  .voice-agent-embed{
+    overflow:visible;
+    padding:0;
+    background:transparent;
+    border:0;
+  }
+  .voice-agent-embed elevenlabs-convai{
+    min-height:0;
+    margin:0 auto;
+  }
+  .voice-agent-fallback{
+    margin-top:14px;
+  }
+  .voice-agent-fallback a{
+    width:min(100%,300px);
+  }
 }
 </style>
 </head>
@@ -90,7 +109,7 @@
         ></elevenlabs-convai>
         <div class="voice-agent-fallback">
           <a class="voice-agent-call" href="tel:+18884124692">CALL US: (888) 412-4692</a>
-          <a href="https://elevenlabs.io/app/talk-to?agent_id=agent_6101kw5y8gahfh9v6405s0swkm1e&amp;branch_id=agtbrch_4201kw5y8htkfkptdfa5zs540hmg" target="_blank" rel="noopener">OPEN AGENT IN ELEVENLABS</a>
+          <a href="https://elevenlabs.io/app/talk-to?agent_id=agent_6101kw5y8gahfh9v6405s0swkm1e&amp;branch_id=agtbrch_4201kw5y8htkfkptdfa5zs540hmg" target="_blank" rel="noopener">OPEN VOICE AGENT</a>
         </div>
       </div>
     </div>
@@ -108,6 +127,11 @@
   </div>
 </footer>
 
+<script>
+if (window.matchMedia('(max-width: 680px)').matches) {
+  document.querySelector('elevenlabs-convai')?.remove();
+}
+</script>
 <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 </body>
 </html>
