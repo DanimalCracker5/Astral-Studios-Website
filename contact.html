@@ -12,13 +12,45 @@
 .form-wrap{
   max-width:800px;margin:0 auto;padding:0 20px 80px;
 }
-.jotform-embed{
-  width:100%;min-height:600px;
+.contact-hero-sub{
+  max-width:640px;
+  margin:0 auto;
+  line-height:1.7;
+}
+.voice-agent-embed{
+  width:100%;
   border:1px solid var(--line);border-radius:var(--r);
   overflow:hidden;background:var(--s1);
+  padding:24px;
 }
-.jotform-embed iframe{
-  width:100%;min-height:600px;border:none;display:block;
+.voice-agent-embed elevenlabs-convai{
+  display:block;
+  min-height:520px;
+}
+.voice-agent-fallback{
+  margin-top:18px;
+  display:flex;
+  justify-content:center;
+}
+.voice-agent-fallback a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  min-height:44px;
+  padding:10px 18px;
+  border-radius:999px;
+  border:1px solid rgba(34,211,238,.28);
+  background:rgba(34,211,238,.055);
+  color:var(--blue);
+  font-family:'DM Mono',monospace;
+  font-size:.62rem;
+  letter-spacing:.08em;
+  text-decoration:none;
+}
+@media(max-width:680px){
+  .voice-agent-embed{padding:16px}
+  .voice-agent-embed elevenlabs-convai{min-height:460px}
 }
 </style>
 </head>
@@ -33,19 +65,24 @@
     <div class="hero-badge"><span class="hero-badge-dot"></span>Get In Touch</div>
     <h1 class="page-title">CONTACT</h1>
     <div class="hero-rule"></div>
-    <p class="hero-sub">Questions, project inquiries, bug reports, or just to say hi — fill out the form below.</p>
+    <p class="hero-sub contact-hero-sub">Questions, project inquiries, bug reports, or just to say hi - talk with the Astral Studios agent below.</p>
   </div>
 
   <div class="form-wrap">
     <div class="block">
-      <div class="sec-lbl">Send a Message</div>
-      <div class="jotform-embed">
-        <iframe
-          src="https://form.jotform.com/261097089947170"
-          title="Contact Astral Studios"
-          allowfullscreen
-          scrolling="yes"
-        ></iframe>
+      <div class="sec-lbl">Start a Conversation</div>
+      <div class="voice-agent-embed">
+        <elevenlabs-convai
+          agent-id="agent_6101kw5y8gahfh9v6405s0swkm1e"
+          variant="expanded"
+          action-text="Talk to Astral Studios"
+          start-call-text="Start conversation"
+          end-call-text="End conversation"
+          expand-text="Open assistant"
+        ></elevenlabs-convai>
+        <div class="voice-agent-fallback">
+          <a href="https://elevenlabs.io/app/talk-to?agent_id=agent_6101kw5y8gahfh9v6405s0swkm1e&amp;branch_id=agtbrch_4201kw5y8htkfkptdfa5zs540hmg" target="_blank" rel="noopener">OPEN AGENT IN ELEVENLABS</a>
+        </div>
       </div>
     </div>
   </div>
@@ -61,5 +98,6 @@
   </div>
 </footer>
 
+<script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 </body>
 </html>
