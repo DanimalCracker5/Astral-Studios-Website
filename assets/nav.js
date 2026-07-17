@@ -102,3 +102,26 @@
     }
   });
 })();
+
+// Shared ElevenLabs AI assistant widget.
+(function () {
+  if (document.querySelector('elevenlabs-convai')) {
+    return;
+  }
+
+  const widget = document.createElement('elevenlabs-convai');
+  widget.setAttribute('agent-id', 'agent_6101kw5y8gahfh9v6405s0swkm1e');
+  widget.setAttribute('action-text', 'Ask Astral AI');
+  widget.setAttribute('avatar-orb-color-1', '#22d3ee');
+  widget.setAttribute('avatar-orb-color-2', '#818cf8');
+  document.body.appendChild(widget);
+
+  const widgetScriptSrc = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
+  if (!document.querySelector('script[src="' + widgetScriptSrc + '"]')) {
+    const widgetScript = document.createElement('script');
+    widgetScript.src = widgetScriptSrc;
+    widgetScript.async = true;
+    widgetScript.type = 'text/javascript';
+    document.body.appendChild(widgetScript);
+  }
+})();
