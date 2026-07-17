@@ -6,15 +6,28 @@
   const NAV_HTML = `
 <nav>
   <a class="nav-logo" href="index.html">
-    <img src="assets/logo.png" alt="Astral Studios" style="height:48px;width:auto;display:block;">
+    <img src="assets/logo.png" alt="" style="height:48px;width:auto;display:block;">
+    <span class="nav-brand-copy">
+      <strong>Astral Studios</strong>
+      <small>Games &amp; digital</small>
+    </span>
   </a>
+  <div class="nav-primary" role="navigation" aria-label="Primary navigation">
+    <a href="index.html" data-nav="home">Studio</a>
+    <a href="index.html#games">Games</a>
+    <a href="index.html#services">Services</a>
+    <a href="portfolio.html" data-nav="portfolio">Work</a>
+    <a href="contact.html" data-nav="contact">Contact</a>
+  </div>
   <div class="nav-actions">
+    <span class="nav-menu-caption">Menu</span>
     <button class="ham nav-menu-btn" id="ham-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mob">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
+<div class="nav-scrim" id="nav-scrim"></div>
 <div class="nav-panel" id="mob" aria-hidden="true">
   <div class="nav-panel-head">
     <span>Navigation</span>
@@ -28,6 +41,9 @@
       <a class="nav-panel-link" href="news.html" data-nav="news">
         <span>News</span><small>Updates</small>
       </a>
+      <a class="nav-panel-link" href="portfolio.html" data-nav="portfolio">
+        <span>Portfolio</span><small>Selected work</small>
+      </a>
     </div>
     <div class="nav-panel-section">
       <div class="nav-panel-kicker">Games</div>
@@ -36,6 +52,15 @@
       </a>
       <a class="nav-panel-link" href="drunken-decks.html" data-nav="drunken-decks">
         <span>Drunken Decks</span><small>Card game</small>
+      </a>
+    </div>
+    <div class="nav-panel-section">
+      <div class="nav-panel-kicker">Services</div>
+      <a class="nav-panel-link" href="GameDevelopment.html" data-nav="services-game">
+        <span>Game Development</span><small>Unity, mobile &amp; VR</small>
+      </a>
+      <a class="nav-panel-link" href="WebDevelopment.html" data-nav="services-web">
+        <span>Web Development</span><small>Sites &amp; web apps</small>
       </a>
     </div>
     <div class="nav-panel-section">
@@ -67,9 +92,12 @@
 
   const menuButton = document.getElementById('ham-btn');
   const menu = document.getElementById('mob');
+  const menuScrim = document.getElementById('nav-scrim');
 
   function setMenu(open) {
     menu.classList.toggle('open', open);
+    menuScrim.classList.toggle('open', open);
+    document.body.classList.toggle('nav-open', open);
     menu.setAttribute('aria-hidden', String(!open));
     menuButton.classList.toggle('active', open);
     menuButton.setAttribute('aria-expanded', String(open));
@@ -84,6 +112,10 @@
     if (event.target.closest('a')) {
       setMenu(false);
     }
+  });
+
+  menuScrim.addEventListener('click', function () {
+    setMenu(false);
   });
 
   document.addEventListener('click', function (event) {
