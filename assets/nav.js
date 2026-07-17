@@ -6,7 +6,7 @@
   const NAV_HTML = `
 <nav>
   <a class="nav-logo" href="index.html">
-    <img src="assets/logo.png" alt="Astral Studios" style="height:34px;width:auto;display:block;">
+    <img src="assets/logo.png" alt="Astral Studios" style="height:48px;width:auto;display:block;">
   </a>
   <div class="nav-actions">
     <button class="ham nav-menu-btn" id="ham-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mob">
@@ -111,6 +111,12 @@
   widget.setAttribute('action-text', 'Ask Astral AI');
   widget.setAttribute('avatar-orb-color-1', '#22d3ee');
   widget.setAttribute('avatar-orb-color-2', '#818cf8');
+  const compactWidget = window.matchMedia('(max-width: 1024px)');
+  const updateWidgetVariant = function () {
+    widget.setAttribute('variant', compactWidget.matches ? 'expandable' : 'full');
+  };
+  updateWidgetVariant();
+  compactWidget.addEventListener('change', updateWidgetVariant);
   document.body.appendChild(widget);
 
   const widgetScriptSrc = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
