@@ -224,8 +224,8 @@ h1.game-title{
 
 /* SOCIAL */
 .social-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:4px;justify-content:center}
-.soc{display:inline-flex;align-items:center;gap:8px;padding:8px 15px;background:var(--s1);border:1px solid var(--line);border-radius:var(--r-sm);font-size:.79rem;font-weight:500;color:var(--sub);text-decoration:none;transition:color .15s,border-color .15s}
-.soc:hover{color:var(--text);border-color:var(--line2)}
+.soc{display:inline-flex;align-items:center;gap:8px;padding:8px 6px;font-size:.79rem;font-weight:500;color:var(--sub);text-decoration:none;transition:color .15s}
+.soc:hover{color:var(--text)}
 
 /* SERVICES */
 .svc-intro{max-width:800px;margin:0 auto;padding:64px 20px 52px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
@@ -268,11 +268,6 @@ footer{border-top:1px solid var(--line);padding:18px 28px;display:flex;align-ite
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-height:34px;
-  padding:0 14px;
-  border:1px solid rgba(34,211,238,.28);
-  border-radius:999px;
-  background:rgba(34,211,238,.055);
   color:var(--blue) !important;
   font-family:'DM Mono',monospace;
   font-size:.62rem !important;
@@ -280,8 +275,6 @@ footer{border-top:1px solid var(--line);padding:18px 28px;display:flex;align-ite
   white-space:nowrap;
 }
 .foot-call:hover{
-  border-color:rgba(34,211,238,.48);
-  background:rgba(34,211,238,.1);
   color:var(--blue) !important;
 }
 
@@ -1193,13 +1186,6 @@ body::after{
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:0 12px;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:999px;
-    background:rgba(255,255,255,.02);
     white-space:nowrap !important;
-  }
-  .foot-call{
-    min-height:42px;
   }
 }

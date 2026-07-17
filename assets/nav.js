@@ -9,9 +9,6 @@
     <img src="assets/logo.png" alt="Astral Studios" style="height:34px;width:auto;display:block;">
   </a>
   <div class="nav-actions">
-    <a class="nav-cta" href="https://tidycal.com/astralstudios/schedule" target="_blank" rel="noopener">
-      Schedule Meeting
-    </a>
     <button class="ham nav-menu-btn" id="ham-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mob">
       <span></span><span></span><span></span>
     </button>
@@ -21,7 +18,6 @@
 <div class="nav-panel" id="mob" aria-hidden="true">
   <div class="nav-panel-head">
     <span>Navigation</span>
-    <a href="https://tidycal.com/astralstudios/schedule" target="_blank" rel="noopener">Schedule</a>
   </div>
   <div class="nav-panel-grid">
     <div class="nav-panel-section">
@@ -105,7 +101,8 @@
 
 // Shared ElevenLabs AI assistant widget.
 (function () {
-  if (document.querySelector('elevenlabs-convai')) {
+  const page = document.body.dataset.page;
+  if (page === 'astral' || page === 'drunken-decks' || document.querySelector('elevenlabs-convai')) {
     return;
   }
 
