@@ -732,6 +732,40 @@ nav{
   background:transparent;
   border:1px solid var(--line2);
 }
+.work-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.second-brain-page-title{font-size:clamp(2.5rem,8vw,5.5rem);letter-spacing:.025em}
+.second-brain-hero-card{
+  display:grid;
+  grid-template-columns:minmax(180px,.34fr) minmax(0,1fr);
+  align-items:center;
+  gap:clamp(28px,5vw,64px);
+  padding:clamp(28px,5vw,58px);
+  overflow:hidden;
+  border:1px solid var(--hairline);
+  border-radius:var(--r);
+  background:
+    radial-gradient(circle at 18% 18%,rgba(129,140,248,.13),transparent 19rem),
+    linear-gradient(145deg,rgba(255,255,255,.025),transparent 48%),
+    #070707;
+  box-shadow:0 24px 64px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.025);
+}
+.second-brain-page-mark{display:grid;place-items:center}
+.second-brain-page-mark img{
+  width:min(100%,220px);
+  aspect-ratio:1;
+  object-fit:cover;
+  border-radius:26%;
+  box-shadow:0 28px 70px rgba(0,0,0,.62),0 0 0 1px rgba(255,255,255,.13),0 0 54px rgba(129,140,248,.15);
+}
+.second-brain-hero-card h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,5vw,4.2rem);font-weight:400;line-height:1;letter-spacing:.055em;color:var(--text)}
+.second-brain-hero-card .prose{max-width:650px;margin-top:15px}
+.second-brain-page-actions{justify-content:flex-start;margin-top:26px}
+.second-brain-page-actions .home-mini-btn{flex:0 1 auto}
+.second-brain-download-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .work-placeholder{opacity:.82}
 .work-placeholder .work-link{background:transparent;color:var(--blue);border:1px solid rgba(34,211,238,.34)}
 
@@ -741,6 +775,9 @@ nav{
   .work-preview{order:-1;border-left:0;border-bottom:1px solid var(--line)}
   .work-copy{padding:26px 22px}
   .preview-screen strong{font-size:1.75rem}
+  .second-brain-hero-card{grid-template-columns:1fr;text-align:center}
+  .second-brain-hero-card .home-card-eyebrow,.second-brain-hero-card .prose{margin-right:auto;margin-left:auto}
+  .second-brain-page-actions{justify-content:center}
 }
 
 /* 2026 visual refresh */

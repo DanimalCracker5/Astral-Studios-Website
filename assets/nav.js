@@ -14,7 +14,7 @@
   </a>
   <div class="nav-primary" role="navigation" aria-label="Primary navigation">
     <a href="index.html" data-nav="home">Studio</a>
-    <a href="index.html#games">Games</a>
+    <a href="index.html#games">Games &amp; Apps</a>
     <a href="index.html#services">Services</a>
     <a href="portfolio.html" data-nav="portfolio">Work</a>
     <a href="contact.html" data-nav="contact">Contact</a>
@@ -46,12 +46,15 @@
       </a>
     </div>
     <div class="nav-panel-section">
-      <div class="nav-panel-kicker">Games</div>
+      <div class="nav-panel-kicker">Games &amp; Apps</div>
       <a class="nav-panel-link" href="astral.html" data-nav="astral">
         <span>Astral</span><small>Sandbox game</small>
       </a>
       <a class="nav-panel-link" href="drunken-decks.html" data-nav="drunken-decks">
         <span>Drunken Decks</span><small>Card game</small>
+      </a>
+      <a class="nav-panel-link" href="second-brain-notes.html" data-nav="second-brain-notes">
+        <span>Second Brain Notes</span><small>Web &amp; Android app</small>
       </a>
     </div>
     <div class="nav-panel-section">
@@ -134,7 +137,7 @@
 // Shared ElevenLabs AI assistant widget.
 (function () {
   const page = document.body.dataset.page;
-  if (page === 'astral' || page === 'drunken-decks' || document.querySelector('elevenlabs-convai')) {
+  if (page === 'astral' || page === 'drunken-decks' || page === 'second-brain-notes' || document.querySelector('elevenlabs-convai')) {
     return;
   }
 
