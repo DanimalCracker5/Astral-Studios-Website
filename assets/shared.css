@@ -1721,6 +1721,13 @@ footer{background:rgba(2,2,2,.88);backdrop-filter:blur(12px)}
   .dl{min-height:292px;padding:21px}
 }
 
+@media(max-width:680px){
+  .second-brain-hero-card{min-width:0}
+  .second-brain-page-mark{width:100%;min-width:0}
+  .second-brain-page-mark img{width:min(42vw,150px);height:auto;max-width:100%}
+  h1.game-title.second-brain-page-title{font-size:clamp(2.8rem,14vw,4.6rem);letter-spacing:.015em}
+}
+
 @media(max-width:420px){
   .nav-brand-copy small{display:none}
   .nav-panel-grid{grid-template-columns:1fr}
@@ -1729,6 +1736,8 @@ footer{background:rgba(2,2,2,.88);backdrop-filter:blur(12px)}
   .home-game-status{left:16px;bottom:15px}
   .dl-grid{grid-template-columns:1fr}
   .dl{min-height:282px}
+  .second-brain-page-mark img{width:116px;height:116px}
+  h1.game-title.second-brain-page-title{font-size:clamp(2.7rem,13vw,4.2rem);letter-spacing:.02em}
 }
 
 @media(max-width:350px){
