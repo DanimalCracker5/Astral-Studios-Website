@@ -3,85 +3,93 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#07050f"/>
+<meta name="description" content="Astral is an open-world sandbox game built around vehicles, combat, building, and the ability to leave your body through astral projection."/>
 <title>Astral — Astral Studios</title>
+<link rel="icon" type="image/png" href="assets/favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/shared.css"/>
+<link rel="stylesheet" href="assets/shared.css?v=20260812"/>
 </head>
 <body data-page="astral">
 
-<script src="assets/nav.js"></script>
+<script src="assets/nav.js?v=20260812"></script>
 
 <div class="page-content">
 
-  <div class="hero">
-    <div class="hero-glow"></div>
-    <div class="hero-badge"><span class="hero-badge-dot"></span>Early Access</div>
-    <h1 class="game-title">ASTRAL</h1>
-    <div class="hero-rule"></div>
-    <p class="hero-sub">Open World Sandbox &nbsp;·&nbsp; Multi-Platform</p>
-  </div>
+  <section class="astral-hero" aria-labelledby="astral-title">
+    <div class="astral-hero-copy">
+      <div class="hero-badge"><span class="hero-badge-dot"></span>Available in early access</div>
+      <p class="astral-kicker">Leave your body. Explore everything.</p>
+      <h1 id="astral-title">ASTRAL</h1>
+      <p class="astral-lede">A playful open-world sandbox where vehicles, combat, building, and astral projection turn the world into your playground.</p>
+      <div class="astral-hero-actions">
+        <a class="btn btn-primary" href="#download">Choose your platform <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-ghost" href="#trailer">Watch trailer <span aria-hidden="true">▶</span></a>
+      </div>
+      <div class="astral-platforms" aria-label="Available platforms">
+        <span>Android</span><span>Windows</span><span>Meta Quest</span>
+      </div>
+    </div>
+    <div class="astral-hero-art" aria-hidden="true">
+      <span class="astral-halo"></span>
+      <img src="assets/astral-icon.png" alt=""/>
+      <span class="astral-float-card astral-float-one">Open world</span>
+      <span class="astral-float-card astral-float-two">Project beyond</span>
+    </div>
+  </section>
 
   <div class="wrap">
 
-    <div class="block">
-      <div class="sec-lbl">Trailer</div>
-      <iframe
-        src="https://drive.google.com/file/d/1OBOb8uqA8TaJYRTa8RKmy1o66ob1T8nJ/preview"
-        allow="autoplay"
-        allowfullscreen
-        style="width:100%;max-width:854px;display:block;margin:0 auto;border-radius:8px;border:none;aspect-ratio:16/9;height:auto;"
-      ></iframe>
-    </div>
+    <section class="block astral-story" id="trailer">
+      <div class="astral-video-frame">
+        <iframe
+          src="https://drive.google.com/file/d/1OBOb8uqA8TaJYRTa8RKmy1o66ob1T8nJ/preview"
+          title="Astral gameplay trailer"
+          allow="autoplay"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="astral-story-copy">
+        <div class="home-card-eyebrow">Your world, your way</div>
+        <h2>One sandbox.<br/>No single path.</h2>
+        <p>Astral is an open-world game built around one unusual power: leave your body and explore beyond it. Drive, build, fight, earn, and experiment at your own pace.</p>
+        <p>It is actively growing in early access, so expect new ideas, unfinished edges, and regular improvements along the way.</p>
+        <a class="home-text-link" href="news.html">Read development updates <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
 
-    <div class="block">
-      <div class="sec-lbl">About</div>
-      <p class="prose">Astral is an open world sandbox game with an astral projection ability — the ability to leave your body and explore the world.</p>
-      <p class="prose">Developed by Daniel Gentry, with the help of tools like Universal Vehicle Controller by Perfect Games, VR Interaction Framework, and Art assets by synty studios. The game will continue to grow and improve — news is posted <a href="news.html">here</a>.</p>
-      <p class="prose">Currently in early development. Bugs and unfinished features should be expected. Mini-games and jobs are a work in progress.</p>
-    </div>
-
-    <div class="block">
-      <button onclick="
-        var c=document.getElementById('modes-content');
-        var a=document.getElementById('modes-arrow');
-        var open=c.style.display!=='none';
-        c.style.display=open?'none':'block';
-        a.style.transform=open?'rotate(0deg)':'rotate(180deg)';
-      " style="width:100%;background:none;border:none;cursor:pointer;padding:0;display:flex;align-items:center;gap:12px;">
-        <div class="sec-lbl" style="flex:1;margin-bottom:0;">Game Modes</div>
-        <svg id="modes-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;transition:transform .25s;transform:rotate(0deg)"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div id="modes-content" style="display:none;margin-top:20px;">
-        <div class="modes">
-          <div class="mode" style="--mc:var(--blue)">
-            <div class="mode-bar"></div>
-            <span class="mode-icon">🌍</span>
-            <div class="mode-name">Sandbox</div>
-            <div class="mode-desc">Open-world free play with an in-game economy and currency system.</div>
-          </div>
-          <div class="mode" style="--mc:var(--purple)">
-            <div class="mode-bar"></div>
-            <span class="mode-icon">🧱</span>
-            <div class="mode-name">Free Build</div>
-            <div class="mode-desc">Unlimited access to all placeable items with no restrictions.</div>
-          </div>
-          <div class="mode" style="--mc:var(--green)">
-            <div class="mode-bar"></div>
-            <span class="mode-icon">🚗</span>
-            <div class="mode-name">Drive</div>
-            <div class="mode-desc">Open world vehicle driving. Purchase vehicles from the in-game shop with earned currency.</div>
-          </div>
-          <div class="mode" style="--mc:var(--red)">
-            <div class="mode-bar"></div>
-            <span class="mode-icon">⚔️</span>
-            <div class="mode-name">Arenas</div>
-            <div class="mode-desc">Wave-based enemy combat. Survive as long as you can — when you die, the run ends.</div>
-          </div>
+    <section class="block">
+      <div class="sec-lbl">Ways to play</div>
+      <div class="modes astral-modes">
+        <div class="mode" style="--mode-accent:#7c5cff">
+          <span class="mode-index">01</span>
+          <div class="mode-name">Sandbox</div>
+          <div class="mode-desc">Explore freely with a working in-game economy and currency system.</div>
+        </div>
+        <div class="mode" style="--mode-accent:#f35cdc">
+          <span class="mode-index">02</span>
+          <div class="mode-name">Free Build</div>
+          <div class="mode-desc">Create without limits using every placeable item from the start.</div>
+        </div>
+        <div class="mode" style="--mode-accent:#3ddcff">
+          <span class="mode-index">03</span>
+          <div class="mode-name">Drive</div>
+          <div class="mode-desc">Cruise the open world and build a garage with vehicles you earn.</div>
+        </div>
+        <div class="mode" style="--mode-accent:#a77bff">
+          <span class="mode-index">04</span>
+          <div class="mode-name">Arenas</div>
+          <div class="mode-desc">Survive wave-based combat and see how long your run can last.</div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section class="block astral-credit">
+      <div class="sec-lbl">Built independently</div>
+      <p class="prose">Astral is developed by Daniel Gentry with support from tools including Universal Vehicle Controller by Perfect Games, VR Interaction Framework, and art assets by Synty Studios. The game is still in active development, so bugs and unfinished features should be expected.</p>
+    </section>
 
     <div class="block download-block" id="download">
       <div class="download-intro">

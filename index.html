@@ -3,31 +3,39 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#07050f"/>
+<meta name="description" content="Astral Studios creates imaginative games, useful software, and custom digital experiences."/>
 <title>Astral Studios</title>
+<link rel="icon" type="image/png" href="assets/favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/shared.css"/>
+<link rel="stylesheet" href="assets/shared.css?v=20260812"/>
 </head>
 <body data-page="home">
 
-<script src="assets/nav.js"></script>
+<script src="assets/nav.js?v=20260812"></script>
 
 <div class="page-content">
 
-  <div class="hero">
-    <div class="hero-glow"></div>
-    <div class="hero-badge"><span class="hero-badge-dot"></span>Independent Studio</div>
-    <h1 class="page-title">ASTRAL STUDIOS</h1>
-    <div class="hero-rule"></div>
-    <p class="hero-sub">
-      Astral Studios LLC is an indie game development company established to publish games and projects by Daniel Gentry.
-    </p>
-    <div class="btn-row home-hero-actions">
-      <a class="btn btn-primary" href="astral.html#download">Download Astral</a>
-      <a class="btn btn-ghost" href="https://tidycal.com/astralstudios/schedule" target="_blank" rel="noopener">Schedule a Meeting</a>
+  <section class="studio-hero" aria-labelledby="studio-title">
+    <div class="studio-hero-copy">
+      <div class="hero-badge"><span class="hero-badge-dot"></span>Independent studio · Michigan</div>
+      <p class="studio-kicker">Games. Software. Experiences.</p>
+      <h1 id="studio-title">Small studio.<br/><span>Big worlds.</span></h1>
+      <p class="studio-lede">Astral Studios creates playful games, useful software, and custom digital experiences—with every detail built to feel intentional.</p>
+      <div class="btn-row home-hero-actions">
+        <a class="btn btn-primary" href="astral.html">Explore Astral <span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="#services">Work with the studio</a>
+      </div>
     </div>
-  </div>
+    <a class="studio-hero-art" href="astral.html" aria-label="Explore Astral, our featured game">
+      <span class="studio-orbit studio-orbit-one" aria-hidden="true"></span>
+      <span class="studio-orbit studio-orbit-two" aria-hidden="true"></span>
+      <img src="assets/astral-icon.png" alt="Astral game logo: a glowing purple and pink ghost"/>
+      <span class="studio-art-label"><i></i> Featured game · Early access</span>
+    </a>
+  </section>
 
   <div class="wrap">
 
@@ -53,7 +61,7 @@
         <article class="home-game-card">
           <a class="home-game-visual" href="astral.html" aria-label="Learn more about Astral">
             <span class="home-game-orbit" aria-hidden="true"></span>
-            <img src="assets/astral.png" alt="Astral game artwork"/>
+            <img src="assets/astral-icon.png" alt="Astral game logo"/>
             <span class="home-game-status"><i></i> Early access</span>
           </a>
           <div class="home-game-content">

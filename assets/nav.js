@@ -9,7 +9,7 @@
     <img src="assets/logo.png" alt="" style="height:48px;width:auto;display:block;">
     <span class="nav-brand-copy">
       <strong>Astral Studios</strong>
-      <small>Games &amp; digital</small>
+      <small>Independent creator studio</small>
     </span>
   </a>
   <div class="nav-primary" role="navigation" aria-label="Primary navigation">
