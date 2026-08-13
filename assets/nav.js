@@ -146,12 +146,7 @@
   widget.setAttribute('action-text', 'Ask Astral AI');
   widget.setAttribute('avatar-orb-color-1', '#22d3ee');
   widget.setAttribute('avatar-orb-color-2', '#818cf8');
-  const compactWidget = window.matchMedia('(max-width: 1024px)');
-  const updateWidgetVariant = function () {
-    widget.setAttribute('variant', compactWidget.matches ? 'expandable' : 'full');
-  };
-  updateWidgetVariant();
-  compactWidget.addEventListener('change', updateWidgetVariant);
+  widget.setAttribute('variant', 'expandable');
   document.body.appendChild(widget);
 
   const widgetScriptSrc = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
