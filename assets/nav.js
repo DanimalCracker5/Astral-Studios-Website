@@ -144,8 +144,8 @@
   const widget = document.createElement('elevenlabs-convai');
   widget.setAttribute('agent-id', 'agent_6101kw5y8gahfh9v6405s0swkm1e');
   widget.setAttribute('action-text', 'Ask Astral AI');
-  widget.setAttribute('avatar-orb-color-1', '#22d3ee');
-  widget.setAttribute('avatar-orb-color-2', '#818cf8');
+  widget.setAttribute('avatar-orb-color-1', '#4fa9c8');
+  widget.setAttribute('avatar-orb-color-2', '#246d8b');
   widget.setAttribute('variant', 'expandable');
   document.body.appendChild(widget);
 

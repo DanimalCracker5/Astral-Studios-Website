@@ -2514,3 +2514,95 @@ footer{min-height:72px;background:#030304;border-color:#16161b}
   .dl-bottom{grid-column:1/3;grid-row:3;min-width:0;margin-top:14px;padding-top:14px;border-top:1px solid #1d1d23;display:grid;grid-template-columns:1fr 132px;align-items:center}
   .dl .pill{align-self:center}
 }
+
+/* Logo-blue accents and a quieter homepage hero */
+:root{
+  --blue:#3f8eab;
+  --blue-dim:rgba(63,142,171,.12);
+  --purple:#3f8eab;
+  --pink:#67bad3;
+  --accent-blue:#3f8eab;
+  --accent-blue-bright:#67bad3;
+  --accent-blue-deep:#245d75;
+}
+.hero{background:radial-gradient(ellipse at 50% 0%,rgba(63,142,171,.1),transparent 50%)}
+.hero-glow{background:radial-gradient(ellipse,rgba(63,142,171,.09),transparent 68%)}
+.hero-badge{
+  color:#9eb9c4;
+  border-color:rgba(63,142,171,.42);
+  background:rgba(22,54,66,.2);
+}
+.hero-badge-dot{background:var(--accent-blue-bright);box-shadow:0 0 9px rgba(103,186,211,.7)}
+.studio-hero{
+  width:min(900px,calc(100% - 32px));
+  min-height:0;
+  display:block;
+  padding:70px 0 62px;
+}
+.studio-hero-copy{max-width:760px}
+.studio-hero h1{font-size:clamp(4.6rem,8vw,7.3rem);letter-spacing:.035em}
+.studio-lede{max-width:630px;color:#aaaeb3}
+.studio-hero-art{display:none}
+.studio-hero .btn-row{display:none}
+
+.btn-primary,.cta-btn,.home-mini-btn.is-primary{
+  color:#061016;
+  border-color:var(--accent-blue-bright);
+  background:var(--accent-blue-bright);
+  box-shadow:0 8px 22px rgba(63,142,171,.16);
+}
+.btn-primary:hover,.cta-btn:hover,.home-mini-btn.is-primary:hover{background:#7bc7dc;border-color:#7bc7dc;box-shadow:0 10px 26px rgba(63,142,171,.22)}
+.home-mini-btn.is-accent,.home-text-link,.prose a,.section-heading>a,.service-link{color:#72b6cc}
+.home-card-eyebrow{color:#72b6cc}
+.section-heading>a:hover,.service-link:hover{color:#a5d2df}
+.nav-primary a::after{background:var(--accent-blue-bright)}
+.nav-primary a:hover,.nav-primary a.active{background:rgba(63,142,171,.1)}
+.nav-panel-link.active span{color:#8fc6d8}
+.home-game-status{border-color:rgba(63,142,171,.38);color:#9cc9d6}
+.home-game-status i{background:var(--accent-blue-bright)}
+
+/* Services get a little color, structure, and depth without leaving the dark theme. */
+.home-service-card{
+  isolation:isolate;
+  overflow:hidden;
+  background:linear-gradient(145deg,rgba(42,117,145,.14),rgba(8,8,11,.96) 58%),#08080b;
+}
+.home-service-card.is-web{background:linear-gradient(145deg,rgba(47,139,154,.14),rgba(8,8,11,.96) 58%),#08080b}
+.home-service-card::before{
+  display:block;
+  z-index:0;
+  right:0;
+  left:0;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--accent-blue-bright),transparent);
+  opacity:.8;
+}
+.home-service-card.is-web::before{background:linear-gradient(90deg,transparent,#69c8cf,transparent)}
+.home-service-card::after{
+  content:'';
+  position:absolute;
+  z-index:0;
+  top:-80px;
+  right:-72px;
+  width:210px;
+  height:210px;
+  border:1px solid rgba(103,186,211,.15);
+  border-radius:50%;
+  box-shadow:0 0 0 18px rgba(103,186,211,.025),0 0 0 38px rgba(103,186,211,.018);
+  pointer-events:none;
+}
+.home-service-card.is-web::after{border-color:rgba(105,200,207,.17);box-shadow:0 0 0 18px rgba(105,200,207,.025),0 0 0 38px rgba(105,200,207,.018)}
+.home-service-card>*{position:relative;z-index:1}
+.home-service-topline span{color:var(--accent-blue-bright)}
+.home-service-card .home-card-icon,
+.home-service-card.is-game .home-card-icon,
+.home-service-card.is-web .home-card-icon{
+  color:var(--accent-blue-bright);
+  background:rgba(42,117,145,.13);
+  border-color:rgba(103,186,211,.28);
+}
+.home-service-card.is-web .home-card-icon{color:#69c8cf;background:rgba(47,139,154,.14);border-color:rgba(105,200,207,.28)}
+.home-service-tags span{color:#8ab9c6;border-color:rgba(63,142,171,.28);background:rgba(42,117,145,.08)}
+.home-service-card.is-web .home-service-tags span{color:#91c4c5;border-color:rgba(105,200,207,.28);background:rgba(47,139,154,.08)}
+
+/* Keep all browser/site identity marks on the Astral Studios company logo. */
