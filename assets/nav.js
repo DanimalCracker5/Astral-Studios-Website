@@ -13,7 +13,7 @@ document.documentElement.classList.add('js');
 
 <nav>
   <a class="nav-logo" href="index.html">
-    <img src="assets/logo.png" alt="" width="46" height="46">
+    <img src="assets/logo.png" alt="" width="44" height="46">
     <span class="nav-brand-copy">
       <strong>Astral Studios</strong>
       <small>Independent creator studio</small>

@@ -8,6 +8,10 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 img,svg,video,iframe{display:block;max-width:100%}
+/* width/height attributes are kept on <img> to reserve space, but they must not
+   win over CSS sizing — without this, an explicit height attribute cancels
+   aspect-ratio and the image renders stretched. */
+img{height:auto}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 ul,ol{list-style:none}
 a{color:inherit;-webkit-tap-highlight-color:transparent}
@@ -1942,10 +1946,14 @@ footer{
   .studio-hero,.astral-hero{
     width:calc(100% - 2 * var(--gut));
     grid-template-columns:1fr;
-    gap:36px;
-    padding-top:40px;
+    gap:28px;
+    padding-top:32px;
   }
-  .studio-hero-art,.astral-hero-art{order:-1;width:min(78vw,340px);margin:0 auto}
+  /* Keep the art short enough that the headline and buttons stay above the
+     fold on a phone, but let the icon fill more of it so it still reads. */
+  .studio-hero-art,.astral-hero-art{order:-1;width:min(60vw,246px);margin:0 auto}
+  .studio-hero-art img,.astral-hero-art img{width:74%}
+  .orbit-3{display:none}
   .studio-hero .btn-row .btn,.astral-hero .btn-row .btn{flex:1 1 100%}
   .studio-stats{gap:16px 24px;margin-top:30px}
   .studio-stat strong{font-size:1.45rem}
