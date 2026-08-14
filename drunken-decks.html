@@ -3,91 +3,38 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#050409"/>
+<meta name="description" content="Drunken Decks is an upcoming drinking card game from Astral Studios."/>
 <title>Drunken Decks — Astral Studios</title>
 <link rel="icon" type="image/png" href="assets/logo.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/shared.css?v=20260812-3"/>
-<style>
-.dd-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 60px 24px 80px;
-}
-.dd-logo {
-  width: 160px;
-  height: 160px;
-  border-radius: 32px;
-  object-fit: cover;
-  box-shadow: 0 16px 64px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.06);
-  margin-bottom: 32px;
-}
-.dd-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.8rem, 8vw, 5rem);
-  letter-spacing: .06em;
-  color: var(--text);
-  line-height: 1;
-  margin-bottom: 18px;
-}
-.dd-soon {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'DM Mono', monospace;
-  font-size: .62rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  padding: 5px 16px;
-  border-radius: 100px;
-  border: 1px solid rgba(168,85,247,.35);
-  background: rgba(168,85,247,.08);
-  color: var(--purple);
-  margin-bottom: 28px;
-}
-.dd-soon::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--purple);
-  animation: pulse 2s infinite;
-}
-.dd-desc {
-  font-size: .9rem;
-  color: var(--sub);
-  line-height: 1.85;
-  max-width: 480px;
-}
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: .35; }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/shared.css?v=20260813"/>
 </head>
 <body data-page="drunken-decks">
 
-<script src="assets/nav.js?v=20260812-3"></script>
+<script src="assets/nav.js?v=20260813"></script>
 
 <div class="page-content">
-  <div class="wrap">
-    <div class="dd-center">
-      <img class="dd-logo" src="assets/DrunkenDecks.png" alt="Drunken Decks"/>
-      <h1 class="dd-title">Drunken Decks</h1>
-      <div class="dd-soon">Coming Soon</div>
-      <p class="dd-desc">A drinking card game where players draw cards, complete dares, answer questions, and give out drinks.</p>
+  <div class="soon-page">
+    <img class="soon-logo" src="assets/DrunkenDecks.png" alt="Drunken Decks" data-reveal="scale"/>
+    <h1 class="soon-title" data-reveal style="--d:60ms">Drunken Decks</h1>
+    <div class="hero-badge" data-reveal style="--d:100ms"><span class="hero-badge-dot"></span>Coming soon</div>
+    <p class="soon-desc" data-reveal style="--d:140ms">A drinking card game where players draw cards, complete dares, answer questions, and give out drinks.</p>
+    <div class="btn-row" data-reveal style="--d:200ms">
+      <a class="btn btn-ghost" href="news.html">Follow development</a>
+      <a class="btn btn-ghost" href="portfolio.html?section=games">More games</a>
     </div>
   </div>
 </div>
 
 <footer>
-  <span class="foot-l">© Astral Studios</span>
+  <span class="foot-l">&copy; Astral Studios</span>
   <div class="foot-links">
     <a class="foot-call" href="tel:+18884124692">Call Us: (888) 412-4692</a>
-    <a href="contact.html">💬 Contact</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
   </div>
 </footer>
 

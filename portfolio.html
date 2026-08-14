@@ -3,51 +3,63 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Portfolio - Astral Studios</title>
+<meta name="theme-color" content="#050409"/>
+<meta name="description" content="Selected game, website, and video work built through Astral Studios LLC."/>
+<title>Portfolio — Astral Studios</title>
 <link rel="icon" type="image/png" href="assets/logo.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/shared.css?v=20260812-3"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/shared.css?v=20260813"/>
 </head>
 <body data-page="portfolio">
 
-<script src="assets/nav.js?v=20260812-3"></script>
+<script src="assets/nav.js?v=20260813"></script>
 
 <div class="page-content">
 
-  <div class="hero portfolio-hero">
-    <div class="hero-glow"></div>
-    <div class="hero-badge"><span class="hero-badge-dot"></span>Studio Portfolio</div>
-    <h1 class="page-title">PORTFOLIO</h1>
-    <div class="hero-rule"></div>
-    <p class="hero-sub">A look at some of our website and game projects built through Astral Studios LLC.</p>
-    <div class="btn-row home-hero-actions">
-      <a class="btn btn-primary" href="https://tidycal.com/astralstudios/schedule" target="_blank" rel="noopener">Schedule a Meeting</a>
-      <a class="btn btn-ghost" href="WebDevelopment.html">Web Development</a>
+  <div class="hero">
+    <div class="hero-badge" data-reveal><span class="hero-badge-dot"></span>Studio portfolio</div>
+    <h1 class="page-title" data-reveal style="--d:60ms">PORTFOLIO</h1>
+    <div class="hero-rule" data-reveal style="--d:100ms"></div>
+    <p class="hero-sub" data-reveal style="--d:140ms">Games, websites, and video work built through Astral Studios LLC.</p>
+    <div class="btn-row" data-reveal style="--d:200ms">
+      <a class="btn btn-primary" href="tel:+18884124692">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.8 21 3 13.2 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1l-2.2 2.2z"/></svg>
+        Call (888) 412-4692
+      </a>
+      <a class="btn btn-ghost" href="contact.html">Contact</a>
     </div>
   </div>
 
   <main class="portfolio-page">
-    <section class="portfolio-intro" data-portfolio-section="websites">
-      <div>
-        <div class="portfolio-eyebrow">Our Work</div>
-        <h2>Websites &amp; Apps</h2>
-      </div>
+
+    <nav class="portfolio-nav" aria-label="Portfolio sections" data-reveal>
+      <a href="portfolio.html?section=games" data-portfolio-nav="games"><i></i>Games</a>
+      <a href="portfolio.html?section=websites" data-portfolio-nav="websites"><i></i>Websites &amp; apps</a>
+      <a href="portfolio.html?section=video" data-portfolio-nav="video"><i></i>Video editing</a>
+    </nav>
+
+    <section class="portfolio-intro" data-portfolio-section="websites" data-reveal>
+      <div class="eyebrow">Our work</div>
+      <h2>Websites &amp; Apps</h2>
+      <p>Hand-coded sites and web tools for small businesses, creators, and our own products.</p>
     </section>
     <section class="portfolio-showcase" data-portfolio-section="websites">
-      <article class="work-row work-featured">
+
+      <article class="panel work-row spotlight" data-reveal>
         <div class="work-copy">
-          <div class="work-kicker">Company Website</div>
-          <h3>Sewfine : Small Business Website</h3>
-          <p>A website for a small sewing machine repair company named Sewfine located in Brighton Michigan</p>
-          <div class="work-tags">
-            <span>Small Business</span>
-            <span>Company Website</span>
+          <div class="work-kicker">Company website</div>
+          <h3>Sewfine &mdash; small business website</h3>
+          <p>A website for a small sewing machine repair company named Sewfine, located in Brighton, Michigan.</p>
+          <div class="tags">
+            <span>Small business</span><span>Company website</span>
           </div>
-          <a class="work-link" href="https://danimalcracker5.github.io/SewfineWebsite/" target="_blank" rel="noopener">Visit Site -&gt;</a>
+          <div class="work-actions">
+            <a class="work-link" href="https://danimalcracker5.github.io/SewfineWebsite/" target="_blank" rel="noopener">Visit site <span aria-hidden="true">&rarr;</span></a>
+          </div>
         </div>
-        <a class="work-preview" href="https://danimalcracker5.github.io/SewfineWebsite/" target="_blank" rel="noopener" aria-label="Open Sewfine website">
+        <a class="work-preview" href="https://danimalcracker5.github.io/SewfineWebsite/" target="_blank" rel="noopener" aria-label="Open the Sewfine website">
           <div class="browser-bar"><span></span><span></span><span></span><em>danimalcracker5.github.io/SewfineWebsite</em></div>
           <div class="preview-screen sewfine-screen">
             <strong>Sewfine</strong>
@@ -56,19 +68,42 @@
         </a>
       </article>
 
-      <article class="work-row">
+      <article class="panel work-row spotlight" data-reveal>
         <div class="work-copy">
-          <div class="work-kicker">Calculator Tool</div>
-          <h3>Inertia : Financial Calculator</h3>
-          <p>A financial calculator interface for making it easier to visualize information to do with pay.</p>
-          <div class="work-tags">
-            <span>Financial Tool</span>
-            <span>Calculator UI</span>
-            <span>Clean Inputs</span>
+          <div class="work-kicker">Notes app</div>
+          <h3>Second Brain Notes</h3>
+          <p>A cloud notes app with folders, tags, note playback, and backups &mdash; shipped as a web app and on Google Play.</p>
+          <div class="tags">
+            <span>Web app</span><span>Android</span><span>Cloud backups</span>
           </div>
-          <a class="work-link" href="https://danimalcracker5.github.io/Inertia/" target="_blank" rel="noopener">Visit Site -&gt;</a>
+          <div class="work-actions">
+            <a class="work-link" href="second-brain-notes.html">View project <span aria-hidden="true">&rarr;</span></a>
+            <a class="work-link work-link-muted" href="https://secondbrainnotes.com/" target="_blank" rel="noopener">Open app <span aria-hidden="true">&#8599;</span></a>
+          </div>
         </div>
-        <a class="work-preview" href="https://danimalcracker5.github.io/Inertia/" target="_blank" rel="noopener" aria-label="Open Inertia website">
+        <a class="work-preview" href="second-brain-notes.html" aria-label="Open the Second Brain Notes page">
+          <div class="browser-bar"><span></span><span></span><span></span><em>secondbrainnotes.com</em></div>
+          <div class="preview-screen second-brain-screen">
+            <img src="assets/second-brain-notes.png" alt="Second Brain Notes icon"/>
+            <strong>Second Brain</strong>
+            <small>Cloud notes, simplified</small>
+          </div>
+        </a>
+      </article>
+
+      <article class="panel work-row spotlight" data-reveal>
+        <div class="work-copy">
+          <div class="work-kicker">Calculator tool</div>
+          <h3>Inertia &mdash; financial calculator</h3>
+          <p>A financial calculator interface that makes pay information easier to visualize.</p>
+          <div class="tags">
+            <span>Financial tool</span><span>Calculator UI</span><span>Clean inputs</span>
+          </div>
+          <div class="work-actions">
+            <a class="work-link" href="https://danimalcracker5.github.io/Inertia/" target="_blank" rel="noopener">Visit site <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+        <a class="work-preview" href="https://danimalcracker5.github.io/Inertia/" target="_blank" rel="noopener" aria-label="Open the Inertia website">
           <div class="browser-bar"><span></span><span></span><span></span><em>danimalcracker5.github.io/Inertia</em></div>
           <div class="preview-screen inertia-screen">
             <strong>Inertia</strong>
@@ -77,19 +112,17 @@
         </a>
       </article>
 
-      <article class="work-row">
+      <article class="panel work-row spotlight" data-reveal>
         <div class="work-copy">
-          <div class="work-kicker">Custom Upload Site</div>
-          <h3>Subpressions : Photo Uploads</h3>
-          <p>
-            A small custom photo printing bussiness website which uses a photo upload  tool made through us.
-          </p>
-          <div class="work-tags">
-            <span>Photo Uploads</span>
-            <span>Customer Flow</span>
-            <span>Sticker Orders</span>
+          <div class="work-kicker">Custom upload site</div>
+          <h3>Subpressions &mdash; photo uploads</h3>
+          <p>A custom photo printing business website with a photo upload tool built by us.</p>
+          <div class="tags">
+            <span>Photo uploads</span><span>Customer flow</span><span>Sticker orders</span>
           </div>
-          <a class="work-link" href="https://subpressions.net" target="_blank" rel="noopener">Visit Site -&gt;</a>
+          <div class="work-actions">
+            <a class="work-link" href="https://subpressions.net" target="_blank" rel="noopener">Visit site <span aria-hidden="true">&rarr;</span></a>
+          </div>
         </div>
         <a class="work-preview" href="https://subpressions.net" target="_blank" rel="noopener" aria-label="Open Subpressions.net">
           <div class="browser-bar"><span></span><span></span><span></span><em>subpressions.net</em></div>
@@ -100,19 +133,19 @@
         </a>
       </article>
 
-      <article class="work-row">
+      <article class="panel work-row spotlight" data-reveal>
         <div class="work-copy">
-          <div class="work-kicker">Music Practice Tool</div>
-          <h3>Guitar Tool : Arpeggio & Chord Trainor</h3>
-          <p>An interactive practice tool for learning arpeggio patterns with a clean browser-based interface built for quick, focused music training sessions.</p>
-          <div class="work-tags">
-            <span>Music Tool</span>
-            <span>Practice UI</span>
-            <span>Web App</span>
+          <div class="work-kicker">Music practice tool</div>
+          <h3>Guitar Tool &mdash; arpeggio &amp; chord trainer</h3>
+          <p>An interactive practice tool for learning arpeggio patterns, with a clean browser interface built for quick, focused sessions.</p>
+          <div class="tags">
+            <span>Music tool</span><span>Practice UI</span><span>Web app</span>
           </div>
-          <a class="work-link" href="https://danimalcracker5.github.io/ArpeggioTool/" target="_blank" rel="noopener">Visit Site -&gt;</a>
+          <div class="work-actions">
+            <a class="work-link" href="https://danimalcracker5.github.io/ArpeggioTool/" target="_blank" rel="noopener">Visit site <span aria-hidden="true">&rarr;</span></a>
+          </div>
         </div>
-        <a class="work-preview" href="https://danimalcracker5.github.io/ArpeggioTool/" target="_blank" rel="noopener" aria-label="Open Arpeggio Trainer">
+        <a class="work-preview" href="https://danimalcracker5.github.io/ArpeggioTool/" target="_blank" rel="noopener" aria-label="Open the Arpeggio Trainer">
           <div class="browser-bar"><span></span><span></span><span></span><em>danimalcracker5.github.io/ArpeggioTool</em></div>
           <div class="preview-screen arpeggio-screen">
             <strong>Arpeggio Trainer</strong>
@@ -121,17 +154,17 @@
         </a>
       </article>
 
-      <article class="work-row">
+      <article class="panel work-row spotlight" data-reveal>
         <div class="work-copy">
-          <div class="work-kicker">Studio Site</div>
-          <h3>Our Website</h3>
-          <p>The main Astral Studios website, built as the home base for games, freelance services, news, support pages, and meeting scheduling.</p>
-          <div class="work-tags">
-            <span>Studio Brand</span>
-            <span>Game Pages</span>
-            <span>Service Hub</span>
+          <div class="work-kicker">Studio site</div>
+          <h3>Our website</h3>
+          <p>The main Astral Studios website &mdash; home base for games, freelance services, news, and support pages.</p>
+          <div class="tags">
+            <span>Studio brand</span><span>Game pages</span><span>Service hub</span>
           </div>
-          <a class="work-link" href="https://astralstudios.llc" target="_blank" rel="noopener">Visit Site -&gt;</a>
+          <div class="work-actions">
+            <a class="work-link" href="https://astralstudios.llc" target="_blank" rel="noopener">Visit site <span aria-hidden="true">&rarr;</span></a>
+          </div>
         </div>
         <a class="work-preview" href="https://astralstudios.llc" target="_blank" rel="noopener" aria-label="Open AstralStudios.llc">
           <div class="browser-bar"><span></span><span></span><span></span><em>astralstudios.llc</em></div>
@@ -145,31 +178,82 @@
 
     </section>
 
-    <section class="portfolio-intro portfolio-section-heading" data-portfolio-section="games">
-      <div>
-        <div class="portfolio-eyebrow">Our Work</div>
-        <h2>Games</h2>
-      </div>
+    <section class="portfolio-intro portfolio-section-heading" data-portfolio-section="games" data-reveal>
+      <div class="eyebrow">Our work</div>
+      <h2>Games</h2>
+      <p>Unity games built and shipped across mobile, desktop, and VR &mdash; developed fully remotely.</p>
     </section>
     <section class="portfolio-showcase" data-portfolio-section="games">
-      <article class="work-row work-featured">
+      <article class="panel work-row spotlight" data-reveal>
         <div class="work-copy">
-          <div class="work-kicker">Open World Sandbox</div>
+          <div class="work-kicker">Open-world sandbox</div>
           <h3>Astral Projection Game</h3>
-          <p>Astral is a cross-platform open world sandbox game built around vehicles, free play, combat arenas, and an astral projection ability that lets players leave their body and explore the world.</p>
-          <div class="work-tags">
-            <span>Unity Game</span>
-            <span>Open World</span>
-            <span>Multi-Platform</span>
+          <p>A cross-platform open world sandbox built around vehicles, free play, combat arenas, and an astral projection ability that lets players leave their body and explore the world.</p>
+          <div class="tags">
+            <span>Unity game</span><span>Open world</span><span>iOS / Android / Steam / Quest</span>
           </div>
-          <a class="work-link" href="astral.html">View Game -&gt;</a>
+          <div class="work-actions">
+            <a class="work-link" href="astral.html">View game <span aria-hidden="true">&rarr;</span></a>
+            <a class="work-link work-link-muted" href="astral.html#download">Download <span aria-hidden="true">&darr;</span></a>
+          </div>
         </div>
-        <a class="work-preview" href="astral.html" aria-label="Open Astral Projection Game">
+        <a class="work-preview" href="astral.html" aria-label="Open the Astral Projection Game page">
           <div class="browser-bar"><span></span><span></span><span></span><em>astralstudios.llc/astral</em></div>
           <div class="preview-screen astral-game-screen">
-            <img src="assets/astral.png" alt="Astral game artwork"/>
+            <img src="assets/astral-icon.png" alt="Astral Projection Game icon"/>
             <strong>Astral</strong>
             <small>Astral projection sandbox</small>
+          </div>
+        </a>
+      </article>
+
+      <article class="panel work-row work-placeholder spotlight" data-reveal>
+        <div class="work-copy">
+          <div class="work-kicker">Card game</div>
+          <h3>Drunken Decks</h3>
+          <p>A drinking card game where players draw cards, complete dares, answer questions, and give out drinks. In development.</p>
+          <div class="tags">
+            <span>Party game</span><span>Mobile</span><span>In development</span>
+          </div>
+          <div class="work-actions">
+            <a class="work-link" href="drunken-decks.html">View project <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+        <a class="work-preview" href="drunken-decks.html" aria-label="Open the Drunken Decks page">
+          <div class="browser-bar"><span></span><span></span><span></span><em>astralstudios.llc/drunken-decks</em></div>
+          <div class="preview-screen arpeggio-screen">
+            <img src="assets/DrunkenDecks.png" alt="Drunken Decks icon"/>
+            <strong>Drunken Decks</strong>
+            <small>Coming soon</small>
+          </div>
+        </a>
+      </article>
+    </section>
+
+    <section class="portfolio-intro portfolio-section-heading" data-portfolio-section="video" data-reveal>
+      <div class="eyebrow">Our work</div>
+      <h2>Video Editing</h2>
+      <p>Trailers, devlogs, and short-form edits produced in house for our own launches and for clients.</p>
+    </section>
+    <section class="portfolio-showcase" data-portfolio-section="video">
+      <article class="panel work-row work-placeholder spotlight" data-reveal>
+        <div class="work-copy">
+          <div class="work-kicker">Service</div>
+          <h3>Video editing portfolio coming soon</h3>
+          <p>We take on video editing alongside game and web work &mdash; game trailers, devlogs, promo cuts, and short-form social edits, with colour, sound, and captions handled. A dedicated portfolio for this service is being put together now.</p>
+          <div class="tags">
+            <span>Trailers</span><span>Devlogs</span><span>Short form</span><span>Captions</span>
+          </div>
+          <div class="work-actions">
+            <a class="work-link" href="tel:+18884124692">Call to discuss <span aria-hidden="true">&rarr;</span></a>
+            <a class="work-link work-link-muted" href="contact.html">Contact <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+        <a class="work-preview" href="contact.html" aria-label="Contact us about video editing">
+          <div class="browser-bar"><span></span><span></span><span></span><em>astralstudios.llc/video</em></div>
+          <div class="preview-screen video-screen">
+            <strong>Video Editing</strong>
+            <small>Portfolio coming soon</small>
           </div>
         </a>
       </article>
@@ -177,12 +261,18 @@
   </main>
 
   <div class="cta-wrap">
-    <div class="cta">
+    <div class="cta" data-reveal>
       <div>
-        <h3>Want a site like these?</h3>
-        <p>Book a meeting and we can talk through the pages, style, and scope you need.</p>
+        <h3>Want something like these?</h3>
+        <p>Give us a call and we can talk through the pages, style, and scope you need.</p>
       </div>
-      <a class="cta-btn" href="https://tidycal.com/astralstudios/schedule" target="_blank" rel="noopener">SCHEDULE MEETING -&gt;</a>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="tel:+18884124692">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.8 21 3 13.2 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1l-2.2 2.2z"/></svg>
+          Call (888) 412-4692
+        </a>
+        <a class="btn btn-ghost" href="contact.html">Contact</a>
+      </div>
     </div>
   </div>
 
@@ -192,27 +282,34 @@
   <span class="foot-l">&copy; Astral Studios</span>
   <div class="foot-links">
     <a class="foot-call" href="tel:+18884124692">Call Us: (888) 412-4692</a>
-    <a href="contact.html">💬 Contact</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
   </div>
 </footer>
 
 <script>
-(function(){
+// Bring the requested category to the top: ?section=games | websites | video
+(function () {
   var params = new URLSearchParams(window.location.search);
-  var requested = (params.get('section') || window.location.hash.replace('#','')).toLowerCase();
-  if (requested !== 'games' && requested !== 'websites') return;
+  var requested = (params.get('section') || window.location.hash.replace('#', '')).toLowerCase();
+  if (['games', 'websites', 'video'].indexOf(requested) === -1) return;
 
   var main = document.querySelector('.portfolio-page');
   if (!main) return;
 
   var sections = Array.prototype.slice.call(main.querySelectorAll('[data-portfolio-section="' + requested + '"]'));
-  sections.reverse().forEach(function(section){
-    main.insertBefore(section, main.firstElementChild);
+  var anchor = main.querySelector('.portfolio-nav');
+  sections.reverse().forEach(function (section) {
+    main.insertBefore(section, anchor ? anchor.nextElementSibling : main.firstElementChild);
   });
 
-  Array.prototype.slice.call(main.querySelectorAll('.portfolio-intro')).forEach(function(section, index){
+  // Only the section that is no longer first keeps the extra top spacing.
+  Array.prototype.slice.call(main.querySelectorAll('.portfolio-intro')).forEach(function (section, index) {
     section.classList.toggle('portfolio-section-heading', index > 0);
   });
+
+  var active = main.querySelector('[data-portfolio-nav="' + requested + '"]');
+  if (active) active.classList.add('active');
 })();
 </script>
 

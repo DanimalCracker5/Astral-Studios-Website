@@ -3,115 +3,140 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#050409"/>
+<meta name="description" content="Second Brain Notes is a cloud notes app from Astral Studios. Capture ideas, organize everything, and keep your notes backed up across the web and Android."/>
 <title>Second Brain Notes — Astral Studios</title>
 <link rel="icon" type="image/png" href="assets/logo.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/shared.css?v=20260812-3"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/shared.css?v=20260813"/>
 </head>
 <body data-page="second-brain-notes">
 
-<script src="assets/nav.js?v=20260812-3"></script>
+<script src="assets/nav.js?v=20260813"></script>
 
 <div class="page-content">
 
   <div class="hero">
-    <div class="hero-glow"></div>
-    <div class="hero-badge"><span class="hero-badge-dot"></span>Web + Android</div>
-    <h1 class="game-title second-brain-page-title">SECOND BRAIN NOTES</h1>
-    <div class="hero-rule"></div>
-    <p class="hero-sub">Cross-Platform Notes &nbsp;·&nbsp; Cloud Backups</p>
+    <div class="hero-badge" data-reveal><span class="hero-badge-dot"></span>Web + Android</div>
+    <h1 class="game-title" data-reveal style="--d:60ms">SECOND BRAIN NOTES</h1>
+    <div class="hero-rule" data-reveal style="--d:100ms"></div>
+    <p class="hero-sub" data-reveal style="--d:140ms">Cloud notes, simplified. Capture ideas and organize everything across your devices.</p>
   </div>
 
   <div class="wrap">
 
     <div class="block">
-      <div class="second-brain-hero-card">
-        <div class="second-brain-page-mark">
-          <img src="assets/second-brain-notes.png" alt="Second Brain Notes app icon"/>
+      <article class="panel sbn-showcase" data-reveal="scale">
+        <div class="sbn-showcase-art">
+          <img src="assets/second-brain-feature.png" alt="Second Brain Notes on two phones: a folder and note list on the left, an open devlog note on the right" width="1024" height="500"/>
         </div>
-        <div>
-          <div class="home-card-eyebrow">Your ideas, wherever you are</div>
-          <h2>Keep your thoughts close.</h2>
-          <p class="prose">Second Brain Notes is a simple notes app for capturing ideas, reminders, and everything you want to keep available across your devices.</p>
-          <div class="home-card-actions second-brain-page-actions">
-            <a class="home-mini-btn is-primary" href="https://secondbrainnotes.com/" target="_blank" rel="noopener">Open Web App</a>
-            <a class="home-mini-btn" href="https://play.google.com/store/apps/details?id=com.astralstudios.secondbrainnotes" target="_blank" rel="noopener">Get Android App</a>
+        <div class="sbn-showcase-body">
+          <div>
+            <div class="eyebrow">Your ideas, wherever you are</div>
+            <h2>Keep your thoughts close.</h2>
+            <p>A focused place to write things down — quick notes, devlogs, prompts, and long-form ideas — with folders, tags, and cloud backups so nothing gets lost between devices.</p>
+          </div>
+          <div class="sbn-showcase-actions">
+            <a class="mini-btn is-primary" href="https://secondbrainnotes.com/" target="_blank" rel="noopener">Open web app</a>
+            <a class="mini-btn" href="https://play.google.com/store/apps/details?id=com.astralstudios.secondbrainnotes" target="_blank" rel="noopener">Get Android app</a>
           </div>
         </div>
-      </div>
+      </article>
     </div>
 
     <div class="block">
-      <div class="sec-lbl">About</div>
-      <p class="prose">Second Brain Notes gives you a focused place to write down ideas and return to them later. Start in the browser or use the Android app, then keep your notes available wherever you work.</p>
-      <p class="prose">Cloud backups help keep your thoughts safe across devices. Open the app online to get started, or install the Android version from Google Play.</p>
-    </div>
-
-    <div class="block">
-      <div class="sec-lbl">Features</div>
+      <div class="sec-lbl" data-reveal>Features</div>
       <div class="feature-grid">
-        <div class="feature" style="--fc:var(--blue)">
-          <div class="feature-top"></div>
-          <span class="feature-icon">✦</span>
+        <div class="panel feature spotlight" style="--fc:var(--mint)" data-reveal>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 20h7M4 20h3.5L18 9.5a2.5 2.5 0 0 0-3.5-3.5L4 16.5V20Z"/></svg>
+          </span>
           <div class="feature-name">Capture quickly</div>
           <div class="feature-desc">Save ideas, reminders, and notes in a focused workspace built for everyday use.</div>
         </div>
-        <div class="feature" style="--fc:var(--purple)">
-          <div class="feature-top"></div>
-          <span class="feature-icon">↗</span>
-          <div class="feature-name">Use anywhere</div>
-          <div class="feature-desc">Move between the web app and Android app while keeping your notes close at hand.</div>
+        <div class="panel feature spotlight" style="--fc:var(--iris)" data-reveal>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h3.6l1.7 2H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></svg>
+          </span>
+          <div class="feature-name">Folders and tags</div>
+          <div class="feature-desc">Group notes into folders, colour them, and tag them so the right thing is one tap away.</div>
         </div>
-        <div class="feature" style="--fc:var(--green)">
-          <div class="feature-top"></div>
-          <span class="feature-icon">⌁</span>
+        <div class="panel feature spotlight" style="--fc:var(--aqua)" data-reveal>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.6-8A5.5 5.5 0 0 1 17 9.5a3.5 3.5 0 0 1 .5 7H7Z"/><path d="M12 12v6M9.5 15.5 12 18l2.5-2.5"/></svg>
+          </span>
           <div class="feature-name">Cloud backups</div>
-          <div class="feature-desc">Keep your notes backed up so your ideas are available when you need them.</div>
+          <div class="feature-desc">Your notes are saved to your account, so your ideas are there when you switch devices.</div>
+        </div>
+        <div class="panel feature spotlight" style="--fc:var(--flare)" data-reveal>
+          <span class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+          </span>
+          <div class="feature-name">Listen to notes</div>
+          <div class="feature-desc">Play a note back out loud, section by section, with word and spoken-length counts as you write.</div>
         </div>
       </div>
     </div>
 
+    <div class="block">
+      <div class="sec-lbl" data-reveal>Screenshots</div>
+      <div class="shots">
+        <figure class="panel shot" data-reveal>
+          <img src="assets/second-brain-feature.png" alt="Second Brain Notes on Android — folder list and an open note" loading="lazy" width="1024" height="500"/>
+          <figcaption>Android &mdash; folders, note list, and the note editor</figcaption>
+        </figure>
+        <div class="shot-soon" data-reveal>
+          <span class="pill soon"><i></i>Coming soon</span>
+          <p>Desktop and web screenshots are on the way. Until then, the web app is live and runs in any browser.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="sec-lbl" data-reveal>About</div>
+      <p class="prose" data-reveal>Second Brain Notes gives you a focused place to write down ideas and return to them later. Start in the browser or use the Android app, then keep your notes available wherever you work.</p>
+      <p class="prose" data-reveal>Cloud backups help keep your thoughts safe across devices. Open the app online to get started, or install the Android version from Google Play.</p>
+    </div>
+
     <div class="block download-block" id="download">
-      <div class="download-intro">
+      <div class="download-intro" data-reveal>
         <div>
-          <div class="home-card-eyebrow">Choose your experience</div>
+          <div class="eyebrow">Choose your experience</div>
           <h2>Use Second Brain Notes</h2>
         </div>
         <p>Open the web app instantly or install the Android app from Google Play.</p>
       </div>
-      <div class="dl-grid second-brain-download-grid">
-        <a class="dl dl-steam" href="https://secondbrainnotes.com/" target="_blank" rel="noopener">
-          <div class="dl-top">
-            <span class="dl-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3M7 8h10M7 12h6"/></svg></span>
-            <span class="dl-arrow" aria-hidden="true">↗</span>
-          </div>
+      <div class="dl-grid">
+        <a class="dl dl-web" href="https://secondbrainnotes.com/" target="_blank" rel="noopener" data-reveal>
+          <span class="dl-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3M7 8h10M7 12h6"/></svg>
+          </span>
           <div class="plat">Any device</div>
           <div class="sname">Web App</div>
           <div class="dl-bottom">
             <span class="pill"><i></i>Available now</span>
-            <span class="dl-action"><span>Open Web App</span><b aria-hidden="true">↗</b></span>
+            <span class="dl-action"><span>Open web app</span><b aria-hidden="true">&#8599;</b></span>
           </div>
         </a>
-        <a class="dl dl-google" href="https://play.google.com/store/apps/details?id=com.astralstudios.secondbrainnotes" target="_blank" rel="noopener">
-          <div class="dl-top">
-            <span class="dl-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 4.5 10 7.5L8 19.5Z"/></svg></span>
-            <span class="dl-arrow" aria-hidden="true">↗</span>
-          </div>
+        <a class="dl dl-google" href="https://play.google.com/store/apps/details?id=com.astralstudios.secondbrainnotes" target="_blank" rel="noopener" data-reveal>
+          <span class="dl-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.9a1.4 1.4 0 0 0-.6 1.2v17.8a1.4 1.4 0 0 0 .6 1.2l.1.1 10-10v-.4l-10-10-.1.1z"/><path d="M17 15.5 13.7 12.2 3.7 22.2c.4.4 1 .4 1.6.1L17 15.5z"/><path d="M17 8.5 5.3 1.7c-.6-.3-1.2-.3-1.6.1l10 10L17 8.5z"/><path d="m17 8.5-3.3 3.3 3.3 3.3 3.9-2.2c.7-.4.7-1.5 0-1.9L17 8.5z"/></svg>
+          </span>
           <div class="plat">Android</div>
           <div class="sname">Google Play</div>
           <div class="dl-bottom">
             <span class="pill"><i></i>Available now</span>
-            <span class="dl-action"><span>Get Android App</span><b aria-hidden="true">↗</b></span>
+            <span class="dl-action"><span>Get Android app</span><b aria-hidden="true">&#8599;</b></span>
           </div>
         </a>
       </div>
     </div>
 
     <div class="block">
-      <div class="sec-lbl">Built by Astral Studios</div>
-      <p class="prose">Second Brain Notes is a software project from Astral Studios. Have feedback or found a bug? <a href="contact.html">Get in touch</a>.</p>
+      <div class="sec-lbl" data-reveal>Built by Astral Studios</div>
+      <p class="prose" data-reveal>Second Brain Notes is a software project from Astral Studios. Have feedback or found a bug? <a href="contact.html">Get in touch</a>.</p>
     </div>
 
   </div>
@@ -122,6 +147,7 @@
   <div class="foot-links">
     <a class="foot-call" href="tel:+18884124692">Call Us: (888) 412-4692</a>
     <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
   </div>
 </footer>
 

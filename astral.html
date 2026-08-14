@@ -3,79 +3,82 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="theme-color" content="#000000"/>
-<meta name="description" content="Astral is an open-world sandbox game built around vehicles, combat, building, and the ability to leave your body through astral projection."/>
-<title>Astral — Astral Studios</title>
+<meta name="theme-color" content="#050409"/>
+<meta name="description" content="Astral Projection Game is an open-world sandbox built around vehicles, combat, building, and the ability to leave your body through astral projection. Out now on iOS, Android, Steam, and Meta Quest."/>
+<title>Astral Projection Game — Astral Studios</title>
 <link rel="icon" type="image/png" href="assets/logo.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/shared.css?v=20260812-3"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/shared.css?v=20260813"/>
 </head>
 <body data-page="astral">
 
-<script src="assets/nav.js?v=20260812-3"></script>
+<script src="assets/nav.js?v=20260813"></script>
 
 <div class="page-content">
 
   <section class="astral-hero" aria-labelledby="astral-title">
     <div class="astral-hero-copy">
-      <div class="hero-badge"><span class="hero-badge-dot"></span>Early access</div>
-      <p class="astral-kicker">Open-world sandbox</p>
-      <h1 id="astral-title">ASTRAL</h1>
-      <p class="astral-lede">Explore an open world with vehicles, building, combat, and the ability to leave your body through astral projection.</p>
-      <div class="astral-hero-actions">
-        <a class="btn btn-primary" href="#download">Choose your platform <span aria-hidden="true">↓</span></a>
-        <a class="btn btn-ghost" href="#trailer">Watch trailer <span aria-hidden="true">▶</span></a>
+      <div class="hero-badge" data-reveal><span class="hero-badge-dot"></span>Early access</div>
+      <p class="astral-kicker" data-reveal style="--d:60ms">Open-world sandbox</p>
+      <h1 id="astral-title" data-reveal style="--d:100ms">Astral Projection Game</h1>
+      <p class="astral-lede" data-reveal style="--d:160ms">Explore an open world with vehicles, building, combat, and the ability to leave your body through astral projection.</p>
+      <div class="btn-row" data-reveal style="--d:220ms">
+        <a class="btn btn-primary" href="#download">Choose your platform <span aria-hidden="true">&darr;</span></a>
+        <a class="btn btn-ghost" href="#trailer">Watch trailer <span aria-hidden="true">&#9654;</span></a>
       </div>
-      <div class="astral-platforms" aria-label="Available platforms">
-        <span>Android</span><span>Windows</span><span>Meta Quest</span>
+      <div class="tags astral-platforms" data-reveal style="--d:280ms" aria-label="Available platforms">
+        <span>iOS</span><span>Android</span><span>Windows</span><span>Meta Quest</span>
       </div>
     </div>
-    <div class="astral-hero-art" aria-hidden="true">
-      <img src="assets/astral-icon.png" alt=""/>
+    <div class="astral-hero-art" data-reveal="scale" style="--d:160ms" aria-hidden="true">
+      <span class="orbit orbit-1"></span>
+      <span class="orbit orbit-2"></span>
+      <img src="assets/astral-icon.png" alt="" width="420" height="420"/>
     </div>
   </section>
 
   <div class="wrap">
 
-    <section class="block astral-story" id="trailer">
+    <section class="block panel astral-story" id="trailer" data-reveal>
       <div class="astral-video-frame">
         <iframe
           src="https://drive.google.com/file/d/1OBOb8uqA8TaJYRTa8RKmy1o66ob1T8nJ/preview"
-          title="Astral gameplay trailer"
+          title="Astral Projection Game gameplay trailer"
           allow="autoplay"
           allowfullscreen
+          loading="lazy"
         ></iframe>
       </div>
       <div class="astral-story-copy">
-        <div class="home-card-eyebrow">About the game</div>
-        <h2>About Astral</h2>
-        <p>Astral is an open-world sandbox developed by Daniel Gentry. Drive vehicles, build with placeable objects, fight enemies, earn in-game currency, and explore using astral projection.</p>
+        <div class="eyebrow">About the game</div>
+        <h2>Leave your body. Explore the world.</h2>
+        <p>Astral Projection Game is an open-world sandbox developed by Daniel Gentry. Drive vehicles, build with placeable objects, fight enemies, earn in-game currency, and explore using astral projection.</p>
         <p>The game is actively being developed in early access. Bugs and unfinished features should be expected while new content and improvements are added.</p>
-        <a class="home-text-link" href="news.html">Read development updates <span aria-hidden="true">→</span></a>
+        <a class="text-link" href="news.html">Read development updates <span aria-hidden="true">&rarr;</span></a>
       </div>
     </section>
 
     <section class="block">
-      <div class="sec-lbl">Ways to play</div>
-      <div class="modes astral-modes">
-        <div class="mode" style="--mode-accent:#7c5cff">
+      <div class="sec-lbl" data-reveal>Ways to play</div>
+      <div class="modes">
+        <div class="panel mode" style="--mc:#8b6cff" data-reveal>
           <span class="mode-index">01</span>
           <div class="mode-name">Sandbox</div>
           <div class="mode-desc">Explore freely with a working in-game economy and currency system.</div>
         </div>
-        <div class="mode" style="--mode-accent:#f35cdc">
+        <div class="panel mode" style="--mc:#e563f0" data-reveal>
           <span class="mode-index">02</span>
           <div class="mode-name">Free Build</div>
           <div class="mode-desc">Create without limits using every placeable item from the start.</div>
         </div>
-        <div class="mode" style="--mode-accent:#3ddcff">
+        <div class="panel mode" style="--mc:#3ddcff" data-reveal>
           <span class="mode-index">03</span>
           <div class="mode-name">Drive</div>
           <div class="mode-desc">Cruise the open world and build a garage with vehicles you earn.</div>
         </div>
-        <div class="mode" style="--mode-accent:#a77bff">
+        <div class="panel mode" style="--mc:#4ade80" data-reveal>
           <span class="mode-index">04</span>
           <div class="mode-name">Arenas</div>
           <div class="mode-desc">Survive wave-based combat and see how long your run can last.</div>
@@ -84,79 +87,84 @@
     </section>
 
     <div class="block download-block" id="download">
-      <div class="download-intro">
+      <div class="download-intro" data-reveal>
         <div>
-          <div class="home-card-eyebrow">Platforms</div>
-          <h2>Download Astral</h2>
+          <div class="eyebrow">Platforms</div>
+          <h2>Download</h2>
         </div>
-        <p>Choose a store to view or install the game.</p>
+        <p>Now available on all four platforms. Pick a store to install the game.</p>
       </div>
       <div class="dl-grid">
-        <a class="dl dl-google" href="https://play.google.com/store/apps/details?id=com.AstralStudios.AstralFreeEdition" target="_blank" rel="noopener">
-          <div class="dl-top">
-            <span class="dl-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 4.5 10 7.5L8 19.5Z"/></svg></span>
-            <span class="dl-arrow" aria-hidden="true">↗</span>
+
+        <a class="dl dl-apple" href="https://apps.apple.com/us/app/astral-projection-game/id6741694456" target="_blank" rel="noopener" data-reveal>
+          <span class="dl-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.9c-.03-2.62 2.14-3.88 2.24-3.94-1.22-1.79-3.12-2.03-3.8-2.06-1.62-.16-3.16.95-3.98.95-.82 0-2.09-.93-3.43-.9-1.77.03-3.4 1.03-4.3 2.61-1.83 3.18-.47 7.89 1.32 10.47.87 1.26 1.91 2.68 3.28 2.63 1.32-.05 1.82-.85 3.41-.85 1.59 0 2.04.85 3.43.82 1.42-.02 2.31-1.29 3.18-2.55 1-1.46 1.42-2.87 1.44-2.95-.03-.01-2.76-1.06-2.79-4.2zM14.5 5.2c.72-.88 1.21-2.1 1.08-3.31-1.04.04-2.3.69-3.05 1.56-.67.78-1.25 2.02-1.09 3.21 1.16.09 2.34-.59 3.06-1.46z"/></svg>
+          </span>
+          <div class="plat">iPhone &amp; iPad</div>
+          <div class="sname">App Store</div>
+          <div class="dl-bottom">
+            <span class="pill"><i></i>New</span>
+            <span class="dl-action"><span>Get on iOS</span><b aria-hidden="true">&#8599;</b></span>
           </div>
+        </a>
+
+        <a class="dl dl-google" href="https://play.google.com/store/apps/details?id=com.AstralStudios.AstralFreeEdition" target="_blank" rel="noopener" data-reveal>
+          <span class="dl-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.9a1.4 1.4 0 0 0-.6 1.2v17.8a1.4 1.4 0 0 0 .6 1.2l.1.1 10-10v-.4l-10-10-.1.1z"/><path d="M17 15.5 13.7 12.2 3.7 22.2c.4.4 1 .4 1.6.1L17 15.5z"/><path d="M17 8.5 5.3 1.7c-.6-.3-1.2-.3-1.6.1l10 10L17 8.5z"/><path d="m17 8.5-3.3 3.3 3.3 3.3 3.9-2.2c.7-.4.7-1.5 0-1.9L17 8.5z"/></svg>
+          </span>
           <div class="plat">Android</div>
           <div class="sname">Google Play</div>
           <div class="dl-bottom">
             <span class="pill"><i></i>Available now</span>
-            <span class="dl-action"><span>Get Astral</span><b aria-hidden="true">↗</b></span>
+            <span class="dl-action"><span>Get on Android</span><b aria-hidden="true">&#8599;</b></span>
           </div>
         </a>
-        <div class="dl dl-apple dead" aria-disabled="true">
-          <div class="dl-top">
-            <span class="dl-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="3"/><path d="M10 6h4M11 18h2"/></svg></span>
-            <span class="dl-arrow" aria-hidden="true">—</span>
-          </div>
-          <div class="plat">iPhone</div>
-          <div class="sname">App Store</div>
-          <div class="dl-bottom">
-            <span class="pill warn"><i></i>Currently unavailable</span>
-            <span class="dl-action is-disabled"><span>Not available</span><b aria-hidden="true">—</b></span>
-          </div>
-        </div>
-        <a class="dl dl-steam" href="https://store.steampowered.com/app/3910490/Astral__Steam_Edition" target="_blank" rel="noopener">
-          <div class="dl-top">
-            <span class="dl-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="16.5" r="3"/><circle cx="17" cy="7" r="3"/><path d="m9.5 14.8 5.2-5.5M4 14l1.1.6"/></svg></span>
-            <span class="dl-arrow" aria-hidden="true">↗</span>
-          </div>
+
+        <a class="dl dl-steam" href="https://store.steampowered.com/app/3910490/Astral__Steam_Edition" target="_blank" rel="noopener" data-reveal>
+          <span class="dl-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="16.4" r="3.1"/><circle cx="16.6" cy="7.4" r="3.4"/><path d="m9.4 14.4 4.9-4.6M3.2 13.9l1.3.6M19.1 18.6a9 9 0 1 1 1.4-11"/></svg>
+          </span>
           <div class="plat">Windows</div>
           <div class="sname">Steam</div>
           <div class="dl-bottom">
             <span class="pill"><i></i>Available now</span>
-            <span class="dl-action"><span>Get Astral</span><b aria-hidden="true">↗</b></span>
+            <span class="dl-action"><span>Get on Steam</span><b aria-hidden="true">&#8599;</b></span>
           </div>
         </a>
-        <a class="dl dl-meta" href="https://www.meta.com/experiences/astral-vr-edition/24935973916024636/" target="_blank" rel="noopener">
-          <div class="dl-top">
-            <span class="dl-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 16c2.5-7.4 5-9.7 7.4-4.4L12 15l1.6-3.4C16 6.3 18.5 8.6 21 16"/></svg></span>
-            <span class="dl-arrow" aria-hidden="true">↗</span>
-          </div>
+
+        <a class="dl dl-meta" href="https://www.meta.com/experiences/astral-vr-edition/24935973916024636/" target="_blank" rel="noopener" data-reveal>
+          <span class="dl-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3h-2.3a2 2 0 0 1-1.6-.8l-.9-1.2a1.5 1.5 0 0 0-2.4 0l-.9 1.2a2 2 0 0 1-1.6.8H6a3 3 0 0 1-3-3v-2Z"/><path d="M8 19.5c1.2.6 2.6.9 4 .9s2.8-.3 4-.9"/></svg>
+          </span>
           <div class="plat">VR</div>
           <div class="sname">Meta Quest</div>
           <div class="dl-bottom">
             <span class="pill"><i></i>Available now</span>
-            <span class="dl-action"><span>Get Astral</span><b aria-hidden="true">↗</b></span>
+            <span class="dl-action"><span>Get on Quest</span><b aria-hidden="true">&#8599;</b></span>
           </div>
         </a>
+
       </div>
     </div>
 
     <div class="block">
-      <div class="sec-lbl">Follow</div>
-      <div class="social-row">
+      <div class="sec-lbl" data-reveal>Follow</div>
+      <div class="social-row" data-reveal>
         <a class="soc" href="https://www.youtube.com/@danimalcracker5" target="_blank" rel="noopener">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4L15.8 12l-6.3 3.6z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.5 15.6V8.4L15.8 12l-6.3 3.6z"/></svg>
           YouTube
         </a>
-        <a class="soc" href="https://linktr.ee/danielgentry" target="_blank" rel="noopener">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M13.73 3.9L17.4.23 15.3-1.9 11.6 1.82 7.94-1.9 5.83.23 9.5 3.9 5.83 7.55l2.11 2.12L11.6 6l3.7 3.67 2.1-2.12L13.73 3.9zm-2.13 7.08H9.45v9.09h2.15V10.98z"/></svg>
-          Linktree
-        </a>
         <a class="soc" href="news.html">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
           News
+        </a>
+        <a class="soc" href="report-bug.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a5 5 0 0 1 5 5v1h2v2h-2v2h3v2h-3v2h2v2h-2v1a5 5 0 0 1-10 0v-1H5v-2h2v-2H4v-2h3v-2H5V8h2V7a5 5 0 0 1 5-5z"/></svg>
+          Report a bug
+        </a>
+        <a class="soc" href="contact.html">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg>
+          Contact
         </a>
       </div>
     </div>
@@ -166,10 +174,11 @@
 </div>
 
 <footer>
-  <span class="foot-l">© Astral Studios</span>
+  <span class="foot-l">&copy; Astral Studios</span>
   <div class="foot-links">
     <a class="foot-call" href="tel:+18884124692">Call Us: (888) 412-4692</a>
-    <a href="contact.html">💬 Contact</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
   </div>
 </footer>
 
