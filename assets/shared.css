@@ -1252,15 +1252,22 @@ h1.game-title{font-size:clamp(3.4rem,12vw,7rem)}
   align-items:center;
   gap:clamp(24px,4vw,44px);
   padding:clamp(18px,2.4vw,26px);
+  scroll-margin-top:calc(var(--nav-h) + 20px);
 }
 .astral-video-frame{
-  overflow:hidden;
   border:1px solid var(--line-hi);
   border-radius:var(--r-sm);
   background:#04030a;
   box-shadow:var(--shadow);
 }
-.astral-video-frame iframe{width:100%;aspect-ratio:16/9;border:0}
+.astral-video-frame video{
+  width:100%;
+  aspect-ratio:16/9;
+  height:auto;
+  border:0;
+  border-radius:inherit;
+  background:#04030a;
+}
 .astral-story-copy{padding:clamp(4px,1.5vw,16px)}
 .astral-story-copy h2{
   margin-bottom:14px;
