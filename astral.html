@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/shared.css?v=20260813"/>
+<link rel="stylesheet" href="assets/shared.css?v=20260823"/>
 </head>
 <body data-page="astral">
 
@@ -41,17 +41,23 @@
 
   <div class="wrap">
 
-    <section class="block panel astral-story" id="trailer" data-reveal>
+    <section class="block panel astral-story" id="trailer">
       <div class="astral-video-frame">
-        <iframe
-          src="https://drive.google.com/file/d/1OBOb8uqA8TaJYRTa8RKmy1o66ob1T8nJ/preview"
+        <video
+          id="astral-trailer"
+          controls
+          playsinline
+          webkit-playsinline
+          preload="metadata"
+          poster="assets/trailer-poster.jpg"
+          width="1280"
+          height="720"
           title="Astral Projection Game gameplay trailer"
-          allow="autoplay"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+        >
+          <source src="assets/trailer.mp4" type="video/mp4">
+        </video>
       </div>
-      <div class="astral-story-copy">
+      <div class="astral-story-copy" data-reveal>
         <div class="eyebrow">About the game</div>
         <h2>Leave your body. Explore the world.</h2>
         <p>Astral Projection Game is an open-world sandbox developed by Daniel Gentry. Drive vehicles, build with placeable objects, fight enemies, earn in-game currency, and explore using astral projection.</p>
@@ -180,6 +186,22 @@
   </div>
 
 </div>
+
+<script>
+(function () {
+  var video = document.getElementById('astral-trailer');
+  if (!video) return;
+
+  function playTrailer() {
+    var playPromise = video.play();
+    if (playPromise && playPromise.catch) playPromise.catch(function () {});
+  }
+
+  document.querySelectorAll('a[href="#trailer"]').forEach(function (link) {
+    link.addEventListener('click', playTrailer);
+  });
+})();
+</script>
 
 <footer>
   <span class="foot-l">Astral Studios</span>
