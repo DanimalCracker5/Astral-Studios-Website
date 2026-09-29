@@ -22,8 +22,7 @@ document.documentElement.classList.add('js');
   <div class="nav-primary" role="navigation" aria-label="Primary navigation">
     <a href="index.html" data-nav="home">Studio</a>
     <a href="index.html#games">Games &amp; Apps</a>
-    <a href="index.html#services">Services</a>
-    <a href="portfolio.html" data-nav="portfolio">Work</a>
+    <a href="news.html" data-nav="news">News</a>
     <a href="contact.html" data-nav="contact">Contact</a>
   </div>
   <div class="nav-actions">
