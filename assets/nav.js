@@ -13,10 +13,9 @@ document.documentElement.classList.add('js');
 
 <nav>
   <a class="nav-logo" href="index.html">
-    <img src="assets/logo.png" alt="" width="44" height="46">
-    <span class="nav-brand-copy">
-      <strong>Astral Studios</strong>
-      <small>Independent creator studio</small>
+    <span class="nav-lockup">
+      <strong>Astral</strong>
+      <span>Studios</span>
     </span>
   </a>
   <div class="nav-primary" role="navigation" aria-label="Primary navigation">
