@@ -18,10 +18,10 @@
     </button>
   </div>
   <div class="nav-links" id="nav-links">
+    <a href="astral.html" data-nav="astral">Astral Projection Game</a>
     <a href="tech-support.html" data-nav="tech-support">Tech Support</a>
     <a href="index.html#services" data-nav="services">Services</a>
     <a href="portfolio.html" data-nav="portfolio">Portfolio</a>
-    <a href="astral.html" data-nav="astral">Astral Projection Game</a>
     <a href="news.html" data-nav="news">News</a>
     <a href="contact.html" data-nav="contact">Contact</a>
     <a class="nav-call" href="tel:+18884124692" aria-label="Call Astral Studios at (888) 412-4692">
