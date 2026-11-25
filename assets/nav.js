@@ -7,7 +7,7 @@
 <nav class="site-nav" aria-label="Primary">
   <a class="nav-logo" href="index.html">
     <img src="assets/logo.png" alt="" width="44" height="44">
-    <span>Astral Studios</span>
+    <span>Astral Studios LLC</span>
   </a>
   <div class="nav-tools">
     <a class="nav-phone" href="tel:+18884124692" aria-label="Call Astral Studios at (888) 412-4692">

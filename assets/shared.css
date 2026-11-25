@@ -221,6 +221,7 @@ a.panel:hover{border-color:var(--accent-line)}
 .home-game-title{font-size:1.5rem}
 .home-game-desc,.home-project-content p{color:var(--sub)}
 .card-actions{margin-top:6px}
+.home-project-card + .home-project-card{margin-top:16px}
 .home-also{margin-top:14px;color:var(--sub);font-size:.95rem}
 .home-also a{color:var(--accent)}
 
