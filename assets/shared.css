@@ -614,3 +614,27 @@ footer{
   .trust-strip{grid-template-columns:1fr}
   .hero-checks{flex-direction:column;gap:8px}
 }
+
+/* --- home: game hero ------------------------------------------------------ */
+.game-hero{
+  position:relative;
+  display:flex;align-items:flex-end;
+  min-height:min(78vh,720px);
+  border-bottom:1px solid var(--line);
+  background:
+    linear-gradient(90deg,rgba(11,11,12,.92) 0%,rgba(11,11,12,.6) 45%,rgba(11,11,12,.1) 100%),
+    linear-gradient(0deg,var(--bg) 0%,rgba(11,11,12,0) 45%),
+    url('trailer-poster.jpg') center/cover no-repeat #000;
+}
+.game-hero-inner{width:100%;max-width:var(--maxw);margin:0 auto;padding:clamp(56px,10vw,120px) var(--gut) clamp(40px,6vw,72px)}
+.game-kicker{margin-bottom:14px;color:var(--accent);font-size:.95rem;font-weight:600}
+.game-hero h1{max-width:12ch;font-size:clamp(2.8rem,8vw,5.4rem);letter-spacing:-.04em;line-height:1}
+.game-lede{max-width:50ch;margin-top:20px;color:#d6d6db;font-size:clamp(1.05rem,1.7vw,1.22rem)}
+.game-hero .btn-row{margin-top:28px}
+.game-platforms{margin-top:20px;color:var(--sub)}
+.game-hero+.wrap{padding-top:clamp(40px,6vw,64px)}
+.download-intro h2{font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.02em}
+@media(max-width:720px){
+  .game-hero{min-height:0;background-position:70% center}
+  .game-hero .btn-row .btn{flex:1 1 auto}
+}
