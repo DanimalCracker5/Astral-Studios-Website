@@ -7,7 +7,7 @@
 <nav class="site-nav" aria-label="Primary">
   <a class="nav-logo" href="index.html">
     <img src="assets/logo.png" alt="" width="44" height="44">
-    <span>Astral Studios LLC</span>
+    <span>Astral Studios <span class="nav-legal">LLC</span></span>
   </a>
   <div class="nav-tools">
     <a class="nav-phone" href="tel:+18884124692" aria-label="Call Astral Studios at (888) 412-4692">
@@ -19,10 +19,9 @@
   </div>
   <div class="nav-links" id="nav-links">
     <a href="astral.html" data-nav="astral">Astral Projection Game</a>
-    <a href="tech-support.html" data-nav="tech-support">Tech Support</a>
-    <a href="index.html#services" data-nav="services">Services</a>
     <a href="portfolio.html" data-nav="portfolio">Portfolio</a>
     <a href="news.html" data-nav="news">News</a>
+    <a href="consulting.html" data-nav="consulting">Consulting</a>
     <a href="contact.html" data-nav="contact">Contact</a>
     <a class="nav-call" href="tel:+18884124692" aria-label="Call Astral Studios at (888) 412-4692">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.8 21 3 13.2 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1l-2.2 2.2z"/></svg>
@@ -33,7 +32,10 @@
 
   const page = document.body.dataset.page;
   const current = page && document.querySelector('[data-nav="' + page + '"]');
-  if (current) current.classList.add('active');
+  if (current) {
+    current.classList.add('active');
+    current.setAttribute('aria-current', 'page');
+  }
 
   const button = document.getElementById('ham-btn');
   const links = document.getElementById('nav-links');
@@ -63,11 +65,50 @@
   widget.setAttribute('action-text', 'Ask Astral AI');
   widget.setAttribute('avatar-orb-color-1', '#2cc7c0');
   widget.setAttribute('avatar-orb-color-2', '#ffffff');
-  widget.setAttribute('variant', 'expandable');
+  const mobile = window.matchMedia('(max-width: 720px)');
+  function sizeWidget() {
+    widget.setAttribute('variant', mobile.matches ? 'tiny' : 'expandable');
+  }
+  sizeWidget();
+  mobile.addEventListener('change', sizeWidget);
+  widget.setAttribute('dismissible', 'true');
   document.body.appendChild(widget);
 
   const script = document.createElement('script');
   script.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
   script.async = true;
   document.body.appendChild(script);
+})();
+
+// Remember an optional business-card referral and include it in inquiry emails.
+// This is local attribution only; there is no sales or commission backend.
+(function () {
+  const key = 'astral-referral';
+  const codePattern = /^[a-zA-Z0-9_-]{1,40}$/;
+  const requested = new URLSearchParams(location.search).get('ref');
+  let referral = null;
+  try {
+    const saved = JSON.parse(localStorage.getItem(key));
+    if (saved && codePattern.test(saved.code) && saved.expires > Date.now()) referral = saved;
+    else localStorage.removeItem(key);
+  } catch (_) { /* Browsing without storage still supports the current URL. */ }
+  if (requested && codePattern.test(requested)) {
+    referral = { code: requested, expires: Date.now() + 30 * 24 * 60 * 60 * 1000 };
+    try { localStorage.setItem(key, JSON.stringify(referral)); } catch (_) {}
+  }
+  if (!referral) return;
+  function applyReferral() {
+    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+      const url = new URL(link.href);
+      const subject = url.searchParams.get('subject') || 'Astral Studios inquiry';
+      url.searchParams.set('subject', subject + ' [Referral: ' + referral.code + ']');
+      link.href = url.href;
+    });
+    document.querySelectorAll('[data-referral-note]').forEach(note => {
+      note.hidden = false;
+      note.textContent = 'Referred by ' + referral.code + '. This code is included in your email inquiry. If you call, mention it so we can credit the introduction.';
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyReferral, { once: true });
+  else applyReferral();
 })();
